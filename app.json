@@ -1,0 +1,61 @@
+name": "Kaal Music Repo",
+    "description": "A VC Player Bot for telegram videochats, written in Python with Pyrogram and Py-Tgcalls.",
+    "logo": "",
+    "keywords": [
+    "python3",
+    "telegram",
+    "Fallen",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "env": {
+      "API_ID": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "A Bot's token from Botfather",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "Fill your user id here. (Must be integer)",
+        "value": "6256455516",
+        "required": true
+      },
+      "SESSION_NAME": {
+        "description": "A pyrogram v2 string session from @StringFatherBot",
+        "value": "",
+        "required": true
+      },
+      "SUDO_USERS": {
+        "description": "The user id(s) of user(s) whom you would like to add as a sudo. Multiple values shall be seperated with a space.",
+        "value": "",
+        "required": true
+      },
+      "BOT_USERNAME": {
+        "description": "ur bot username",
+        "value": "KAALXMUSIC34bot",
+        "required": true
+      }
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
+  }
