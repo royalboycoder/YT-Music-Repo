@@ -20,4 +20,4 @@ async def Royalkifeelings_boot():
 
 
 if __name__ == "__main__":
-    loop.run_until_complete(Royalkifeelings_boot())
+    loop.run_until_complete(init())
