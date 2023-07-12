@@ -1,7 +1,7 @@
 {
-"name": "Kaal Music Repo",
+    "name": "⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰",
     "description": "A VC Player Bot for telegram videochats, written in Python with Pyrogram and Py-Tgcalls.",
-    "logo": "",
+    "logo": "https://te.legra.ph/file/ead56db6ded46455bcb2f.jpg",
     "keywords": [
     "python3",
     "telegram",
