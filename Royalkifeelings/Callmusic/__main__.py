@@ -9,7 +9,7 @@ from Royalkifeelings.plugins import ALL_PLUGINS
 loop = asyncio.get_event_loop()
 
 
-async def Royalboyamit_boot():
+async def Royalkifeelings_boot():
     for all_module in ALL_PLUGINS:
         importlib.import_module("Royalkifeelings.plugins." + all_module)
     await bot.start()
