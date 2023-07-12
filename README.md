@@ -70,4 +70,4 @@ python3 -m Royalkifeelings  # Run the bot
 - [𝗔𝗱𝗶𝘁𝘆𝗮𝗛𝗮𝗹𝗱𝗲𝗿](https://t.me/AdityaHalder) `𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿`
 
 ### Support & Updates 🎑
-<a href="https://t.me/royalkifeelings"><img src="https://img.shields.io/badge/Join-Group%20Support-black.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/royalkifeelings"><img src="https://img.shields.io/badge/Join-Updates%20Channel-black.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/royalkifeelings"><img src="https://img.shields.io/badge/Join-Group%20Support-black.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/royalkifeelings_12"><img src="https://img.shields.io/badge/Join-Updates%20Channel-black.svg?style=for-the-badge&logo=Telegram"></a>
