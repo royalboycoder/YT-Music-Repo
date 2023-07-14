@@ -13,7 +13,7 @@ import requests
 import wget
 import yt_dlp
 from pyrogram import filters
-from Royalkifeelings import bot as Royalboyamit
+from Royalkifeelings.callmusic import bot as Royalboyamit
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
