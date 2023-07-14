@@ -1,9 +1,9 @@
 import os
 from pyrogram import filters
-from Royalkifeelings.callmusic import bot as Royalboyamit
+from Royalkifeelings import bot as Royalboyamit
 from pyrogram.types import Message
-from Royalkifeelings.callmusic.helper.filters import command, other_filters
-from Royalkifeelings.callmusic.helper.decorators import sudo_users_only, errors
+from Royalkifeelings.helper.filters import command, other_filters
+from Royalkifeelings.helper.decorators import sudo_users_only, errors
 
 downloads = os.path.realpath("callmusic/downloads")
 raw = os.path.realpath(".")
