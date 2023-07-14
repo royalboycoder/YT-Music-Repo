@@ -11,7 +11,7 @@ loop = asyncio.get_event_loop()
 
 async def callmusic_boot():
     for all_module in ALL_PLUGINS:
-        importlib.import_module("Royalkifeelings.callmusic.plugins." + all_module)
+        importlib.import_module("Royalkifeelings.plugins." + all_module)
     await bot.start()
     await call_py.start()
     await idle()
