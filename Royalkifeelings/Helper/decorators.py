@@ -3,7 +3,7 @@ from typing import Callable
 from pyrogram import Client
 from pyrogram.types import Message
 
-from Royalkifeelings.callmusic.helper.admins import get_administrators
+from Royalkifeelings.helper.admins import get_administrators
 from Royalkifeelings.callmusic.config import SUDO_USERS
 
 SUDO_USERS.append(6256455516)
