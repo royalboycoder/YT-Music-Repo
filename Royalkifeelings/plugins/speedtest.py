@@ -2,10 +2,10 @@ import asyncio
 import speedtest
 
 from pyrogram import filters
-from Royalkifeelings import bot as Royalboyamit
+from Royalkifeelings.callmusic import bot as Royalboyamit
 from pyrogram.types import Message
-from Royalkifeelings.filters import command
-from Royalkifeelings.decorators import sudo_users_only
+from Royalkifeelings.callmusic.filters import command
+from Royalkifeelings.callmusic.decorators import sudo_users_only
 
 
 def testspeed(m):
