@@ -25,7 +25,7 @@ user = PyTgCalls(
 
 call_py = PyTgCalls(Royalboyamit, overload_quiet_mode=True)
 
-OWNER_NAME = "Royalboyamit"
+OWNER_NAME = "Royal_boy_amit"
 F_OWNER = OWNER_ID[0]
 
 with Client("Royalkifeelings.callmusic", API_ID, API_HASH, bot_token=BOT_TOKEN) as app:
