@@ -1,7 +1,7 @@
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from youtubesearchpython import VideosSearch
 
-from Royalkifeelings.callmusic.config import GROUP_SUPPORT as Royalboyamit
+from Royalkifeelings.config import GROUP_SUPPORT as Royalboyamit
 
 
 def ytsearch(query):
