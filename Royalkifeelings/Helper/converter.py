@@ -1,7 +1,7 @@
 import asyncio
 from os import path
 
-from Royalkifeelings.callmusic.helper.errors import FFmpegReturnCodeError
+from Royalkifeelings.helper.errors import FFmpegReturnCodeError
 
 
 async def convert(file_path: str) -> str:
