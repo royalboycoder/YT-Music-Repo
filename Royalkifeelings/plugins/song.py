@@ -13,15 +13,15 @@ import requests
 import wget
 import yt_dlp
 from pyrogram import filters
-from Royalkifeelings.callmusic import bot as Royalboyamit
+from Royalkifeelings import bot as Royalboyamit
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
 
 from Royalkifeelings.callmusic.config import BOT_USERNAME as bn, SUDO_USERS
-from Royalkifeelings.callmusic.decorators import humanbytes
-from Royalkifeelings.callmusic.filters import command, other_filters
+from Royalkifeelings.helper.decorators import humanbytes
+from Royalkifeelings.helper.filters import command, other_filters
 
 
 ydl_opts = {
