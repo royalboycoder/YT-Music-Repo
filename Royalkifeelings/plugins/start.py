@@ -1,10 +1,8 @@
 from datetime import datetime
-
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
-from Royalkifeelings.callmusic import BOT_NAME, BOT_USERNAME
-from Royalkifeelings.callmusic import bot as Royalboyamit
+from Royalkifeelings.callmusic.config import BOT_NAME, BOT_USERNAME
+from Royalkifeelings import bot as Royalboyamit
 from Royalkifeelings.callmusic.config import GROUP_SUPPORT, UPDATES_CHANNEL
 
 START_TIME = datetime.utcnow()
