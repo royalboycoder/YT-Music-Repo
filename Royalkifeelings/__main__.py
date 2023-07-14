@@ -1,8 +1,8 @@
 import asyncio
 import importlib
 from pytgcalls import idle
-from Royalkifeelings.callmusic import BOT_USERNAME, bot, call_py
-from Royalkifeelings.callmusic.plugins import ALL_PLUGINS
+from Royalkifeelings.callmusic.config import BOT_USERNAME, bot, call_py
+from Royalkifeelings.plugins import ALL_PLUGINS
 
 
 loop = asyncio.get_event_loop()
