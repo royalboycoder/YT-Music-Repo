@@ -5,15 +5,15 @@ from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio
 from youtubesearchpython import VideosSearch
 
-from Royalkifeelings.callmusic.filters import command, other_filters
-from Royalkifeelings.callmusic.inline import audio_markup, stream_markup
-from Royalkifeelings.callmusic.queues import QUEUE, add_to_queue
-from Royalkifeelings.callmusic.thumbnail import play_thumb, queue_thumb
-from Royalkifeelings.callmusic.utils import bash
-from Royalkifeelings.callmusic import BOT_USERNAME
-from Royalkifeelings.callmusic import Royalboyamit as user
-from Royalkifeelings.callmusic import bot as Royalboyamit
-from Royalkifeelings.callmusic import call_py
+from Royalkifeelings.helper.filters import command, other_filters
+from Royalkifeelings.helper.inline import audio_markup, stream_markup
+from Royalkifeelings.helper.queues import QUEUE, add_to_queue
+from Royalkifeelings.helper.thumbnail import play_thumb, queue_thumb
+from Royalkifeelings.helper.utils import bash
+from Royalkifeelings.callmusic.config import BOT_USERNAME
+from Royalkifeelings import Royalboyamit as user
+from Royalkifeelings import bot as Royalboyamit
+from Royalkifeelings import call_py
 
 
 def ytsearch(query):
