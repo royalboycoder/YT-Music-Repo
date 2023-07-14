@@ -1,15 +1,14 @@
 import asyncio
 import importlib
-
 from pytgcalls import idle
-
 from Royalkifeelings.callmusic import BOT_USERNAME, bot, call_py
 from Royalkifeelings.callmusic.plugins import ALL_PLUGINS
+
 
 loop = asyncio.get_event_loop()
 
 
-async def Royalkifeelings.callmusic_boot():
+async def callmusic_boot():
     for all_module in ALL_PLUGINS:
         importlib.import_module("Royalkifeelings.callmusic.plugins." + all_module)
     await bot.start()
@@ -20,4 +19,4 @@ async def Royalkifeelings.callmusic_boot():
 
 
 if __name__ == "__main__":
-    loop.run_until_complete(Royalkifeelings.callmusic())
+    loop.run_until_complete(callmusic_boot())
