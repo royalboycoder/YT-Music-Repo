@@ -3,7 +3,7 @@ import importlib
 
 from pytgcalls import idle
 
-from Royalkifeelings.callmusic.import BOT_USERNAME, bot, call_py
+from Royalkifeelings.callmusic import BOT_USERNAME, bot, call_py
 from Royalkifeelings.callmusic.plugins import ALL_PLUGINS
 
 loop = asyncio.get_event_loop()
