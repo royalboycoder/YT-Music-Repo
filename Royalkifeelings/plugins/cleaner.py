@@ -1,6 +1,6 @@
 import os
 from pyrogram import filters
-from Royalkifeelings import bot as Royalboyamit
+from Royalkifeelings.callmusic import bot as Royalboyamit
 from pyrogram.types import Message
 from helper.filters import command, other_filters
 from helper.decorators import sudo_users_only, errors
