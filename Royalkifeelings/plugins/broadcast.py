@@ -4,8 +4,8 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from Royalkifeelings.config import OWNER_ID
-from Royalkifeelings import bot, Royalboyamit
+from Royalkifeelings.callmusic.config import OWNER_ID
+from Royalkifeelings.callmusic import bot, Royalboyamit
 
 
 @bot.on_message(filters.command("broadcast") & filters.user(OWNER_ID))
