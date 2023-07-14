@@ -12,7 +12,7 @@ from pytgcalls.types.input_stream.quality import (
 from pytgcalls.types.stream import StreamAudioEnded
 
 from helper.queues import QUEUE, clear_queue, get_queue, pop_an_item
-from Royalkifeelings import bot, call_py
+from Royalkifeelings.callmusic import bot, call_py
 
 async def skip_current_song(chat_id):
     if chat_id in QUEUE:
