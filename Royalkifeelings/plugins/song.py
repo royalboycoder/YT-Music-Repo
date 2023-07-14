@@ -19,9 +19,9 @@ from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
 
-from Royalkifeelings.config import BOT_USERNAME as bn, SUDO_USERS
-from Royalkifeelings.decorators import humanbytes
-from Royalkifeelings.filters import command, other_filters
+from Royalkifeelings.callmusic.config import BOT_USERNAME as bn, SUDO_USERS
+from Royalkifeelings.callmusic.decorators import humanbytes
+from Royalkifeelings.callmusic.filters import command, other_filters
 
 
 ydl_opts = {
