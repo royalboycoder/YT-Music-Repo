@@ -1,7 +1,7 @@
 from pyrogram import Client
 from pytgcalls import PyTgCalls, idle
 
-from Royalkifeelings.callmuaic.config import API_HASH, API_ID, BOT_TOKEN, OWNER_ID, SESSION_NAME
+from Royalkifeelings.callmusic.config import API_HASH, API_ID, BOT_TOKEN, OWNER_ID, SESSION_NAME
 from Royalkifeelings.callmusic.plugins import ALL_PLUGINS
 
 bot = Client(
