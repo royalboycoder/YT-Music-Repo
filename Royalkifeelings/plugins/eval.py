@@ -10,9 +10,9 @@ from pyrogram import filters
 from inspect import getfullargspec
 from sys import version as pyver
 from Royalkifeelings.callmusic.config import BOT_USERNAME
-from Royalkifeelings.callmusic import bot as Royalboyamit
-from Royalkifeelings.callmusic.decorators import sudo_users_only
-from Royalkifeelings.callmusic.filters import command
+from Royalkifeelings import bot as Royalboyamit
+from Royalkifeelings.helper.decorators import sudo_users_only
+from Royalkifeelings.helper.filters import command
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 
