@@ -6,10 +6,10 @@ from pyrogram.types import (
     Message,
 )
 
-from Royalkifeelings.Helper.decorators import authorized_users_only
-from Royalkifeelings.Helper.filters import command, other_filters
-from Royalkifeelings.Helper.queues import QUEUE, clear_queue
-from Royalkifeelings.Helper.utils import skip_current_song, skip_item
+from Royalkifeelings.helper.decorators import authorized_users_only
+from Royalkifeelings.helper.filters import command, other_filters
+from Royalkifeelings.helper.queues import QUEUE, clear_queue
+from Royalkifeelings.helper.utils import skip_current_song, skip_item
 from Royalkifeelings.callmusic.config import BOT_USERNAME
 from Royalkifeelings import bot as Royalboyamit
 from Royalkifeelings import call_py
