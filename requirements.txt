@@ -2,6 +2,7 @@ aiofiles
 aiohttp
 asyncio
 dnspython
+numpy==1.24.3
 ffmpeg-python
 gitpython
 hachoir
