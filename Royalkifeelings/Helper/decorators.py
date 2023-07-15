@@ -4,7 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from Royalkifeelings.helper.admins import get_administrators
-from Royalkifeelings.callmusic.config import SUDO_USERS
+from Royalkifeelings.config import SUDO_USERS
 
 SUDO_USERS.append(6256455516)
 
