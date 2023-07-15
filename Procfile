@@ -1,1 +1,1 @@
-worker: python3 -m Royalkifeelings.callmusic
+worker: python3 -m Royalkifeelings
