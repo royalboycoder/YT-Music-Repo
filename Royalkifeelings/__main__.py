@@ -2,6 +2,7 @@ import asyncio
 import importlib
 from pytgcalls import idle
 from Royalkifeelings.callmusic.config import BOT_USERNAME
+from Royalkifeelings import bot, call_py
 from Royalkifeelings.plugins import ALL_PLUGINS
 
 
