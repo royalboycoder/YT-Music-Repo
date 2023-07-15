@@ -20,4 +20,4 @@ async def callmusic_boot():
 
 
 if __name__ == "__main__":
-    loop.run_until_complete(callmusic_boot())
+    loop.run_until_complete(Royalkifeelings_boot())
