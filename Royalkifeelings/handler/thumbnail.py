@@ -10,7 +10,7 @@ import random
 from PIL import Image, ImageChops, ImageOps, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from youtubesearchpython.__future__ import VideosSearch
 
-from etc import thumbs, colors
+from ..etc import thumbs, colors
 from Royalkifeelings.callmusic.config import YOUTUBE_IMG_URL
 
 
