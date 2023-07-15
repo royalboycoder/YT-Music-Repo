@@ -1,13 +1,13 @@
 import re
 import asyncio
 
-from Amit Music import BOT_USERNAME
-from Amit Music.inline import stream_markup, audio_markup
+from Royalkifeelings import BOT_USERNAME
+from Royalkifeelings.inline import stream_markup, audio_markup
 from handler.chatname import CHAT_TITLE
-from Amit Music.filters import command, other_filters
-from Amit Music.queues import QUEUE, add_to_queue
-from Amit Music import call_py, Royalboyamit as user
-from Amit Music import bot as Royalboyamit
+from Royalkifeelings.filters import command, other_filters
+from Royalkifeelings.queues import QUEUE, add_to_queue
+from Royalkifeelings import call_py, Royalboyamit as user
+from Royalkifeelings import bot as Royalboyamit
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pytgcalls import StreamType
