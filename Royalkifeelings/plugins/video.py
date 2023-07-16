@@ -19,7 +19,7 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 from youtubesearchpython import VideosSearch
-from handler.thumbnail import play_thumb, queue_thumb
+from Royalkifeelings.handler.thumbnail import play_thumb, queue_thumb
 
 IMAGE_THUMBNAIL = "https://te.legra.ph/file/ead56db6ded46455bcb2f.jpg"
 
