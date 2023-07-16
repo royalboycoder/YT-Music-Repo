@@ -34,25 +34,25 @@ async def start(_, message: Message):
         caption=f"""**𝐇𝐞𝐥𝐥𝐨 {BOT_NAME}✨ 𝐓𝐡𝐢𝐬 𝐀𝐝𝐯𝐚𝐧𝐜𝐞 🥀 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐌𝐮𝐬𝐢𝐜 🎶 𝐁𝐨𝐭 𝐑𝐮𝐧 𝐎𝐧 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 🥀 𝐕𝐩𝐬 💫𝐒𝐞𝐫𝐯𝐞𝐫 🌎 𝐅𝐞𝐞𝐥 ❤️ 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐌𝐮𝐬𝐢𝐜 🎧 𝐈𝐧 𝐕𝐜 😎🤟
 📡 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲: [𝐋σⱱəᴙ 𝐖σᴙɭɗ 𝐂ɦɑʈʈɪŋʛ 𝐇ʋB](https://t.me/royalkifeelings) 💞...**""",)
      reply_markup=InlineKeyboardMarkup(
-         [
-             [
-                 InlineKeyboardButton(
-                     "➕ ❰ 𝐀𝐃𝐃 𝐌𝐄 ❱ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-             ],
-             [
-                 InlineKeyboardButton(
-                     "✯ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 ✯", url=f"https://t.me/royalkifeelings_12"),
+            [
+                [
+                    InlineKeyboardButton(
+                        "➕ ❰ 𝐀𝐃𝐃 𝐌𝐄 ❱ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "✯ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 ✯", url=f"https://t.me/royalkifeelings_12"),
 
-                 InlineKeyboardButton(
-                     "✯ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 ✯", url=f"https://t.me/royalkifeelings"),
-             ],
-             [
-                 InlineKeyboardButton(
-                     text="🥀 ❰ 𝐎𝐰𝐧𝐞𝐫シ︎𝐱𝐃 ❱ ✨", url=f"https://t.me/royal_boy_amit")
-             ]
-        ]
-     ),    
-  )
+                    InlineKeyboardButton(
+                        "✯ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 ✯", url=f"https://t.me/royalkifeelings"),
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="🥀 ❰ 𝐎𝐰𝐧𝐞𝐫シ︎𝐱𝐃 ❱ ✨", url=f"https://t.me/royal_boy_amit")
+                ]
+           ]
+        ),    
+     )
 
 
 @Royalboyamit.on_message(filters.command(["repo", "amit"]))
