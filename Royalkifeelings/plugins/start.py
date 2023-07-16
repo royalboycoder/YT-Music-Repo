@@ -56,7 +56,7 @@ async def start(_, message: Message):
      )
 
 
-@Royalboyamit.on_message(filters.command(["repo", "Royalboyamit"]))
+@Royalboyamit.on_message(filters.command(["repo", "amit"]))
 async def help(client: Royalboyamit, message: Message):
     await message.reply_text(
         text=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 👅 𝗜𝘀 𝗮𝗻 𝗽𝗼𝘄𝗲𝗿𝗳𝘂𝗹 🌏 𝗺𝘂𝘀𝗶𝗰 𝘀𝗼𝘂𝗿𝗰𝗲 🚬 𝗠𝗮𝗸𝗲 𝘂𝗿 𝗳𝗿𝗼𝗸 ⚜️ 𝗮𝗻𝗱 𝗴𝗶𝘃𝗲 𝗼𝗻𝗲 ⭐ 𝗳𝗼𝗿 𝗼𝘂𝗿 𝗵𝗮𝗿𝗱 𝘄𝗼𝗿𝗸 🥀**",
