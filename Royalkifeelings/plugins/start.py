@@ -70,7 +70,7 @@ async def help(client: Royalboyamit, message: Message):
         ),
     )
 
-@Royalboyamit.on_message(filters.command(["kana"]) & filters.group)
+@Royalboyamit.on_message(filters.command(["amit"]) & filters.group)
 async def start(client: Royalboyamit, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
