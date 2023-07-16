@@ -51,8 +51,7 @@ async def start(_, message: Message):
                         text="🥀 ❰ 𝐎𝐰𝐧𝐞𝐫シ︎𝐱𝐃 ❱ ✨", url=f"https://t.me/royal_boy_amit")
                 ]
            ]
-        ),
-      disable_web_page_preview=True,
+        ),    
      )
 
 
