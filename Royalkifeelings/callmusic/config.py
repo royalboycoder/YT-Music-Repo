@@ -6,12 +6,12 @@ load_dotenv()
 
 admins = {}
 
-SESSION_NAME = getenv("SESSION_NAME", "")
+SESSION_NAME: str = getenv("SESSION_NAME", "")
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
 BOT_USERNAME = getenv("BOT_USERNAME", "")
 BOT_TOKEN = getenv("BOT_TOKEN", "")
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH", "")
+API_ID: int = int(getenv("API_ID", None))
+API_HASH: str = getenv("API_HASH", "")
 GROUP_SUPPORT = getenv("GROUP_SUPPORT", "")
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "")
 OWNER_ID = list(map(int, getenv("OWNER_ID", "").split()))
