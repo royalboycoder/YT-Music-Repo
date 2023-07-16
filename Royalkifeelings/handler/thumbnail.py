@@ -10,7 +10,7 @@ import random
 from PIL import Image, ImageChops, ImageOps, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from youtubesearchpython.__future__ import VideosSearch
 
-from Royalkifeelings.etc import thumbs, colors
+from Royalkifeelings.etc import colors
 from Royalkifeelings.callmusic.config import YOUTUBE_IMG_URL
 
 
@@ -67,103 +67,17 @@ async def play_thumb(videoid):
                     await f.write(await resp.read())
                     await f.close()
 
-        wxy = "etc/lacey/lacey.jpg"
-        xy = Image.open(wxy)
-        a = Image.new('L', [640, 640], 0)
-        b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
-        c = np.array(xy)
-        d = np.array(a)
-        e = np.dstack((c, d))
-        f = Image.fromarray(e)
-        x = f.resize((107, 107))
-
-        images = random.choice(thumbs)
         border = random.choice(colors)
         youtube = Image.open(f"cache/play{videoid}.png")
-        bg = Image.open(f"etc/{images}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(30))
-        enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.6)
-
-        image3 = changeImageSize(1280, 720, bg)
-        image5 = image3.convert("RGBA")
-        Image.alpha_composite(background, image5).save(f"cache/temp{videoid}.png")
-
-        Xcenter = youtube.width / 2
-        Ycenter = youtube.height / 2
-        x1 = Xcenter - 250
-        y1 = Ycenter - 250
-        x2 = Xcenter + 250
-        y2 = Ycenter + 250
-        logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((520, 520), Image.ANTIALIAS)
-        logo.save(f"cache/chop{videoid}.png")
-        if not os.path.isfile(f"cache/cropped{videoid}.png"):
-            im = Image.open(f"cache/chop{videoid}.png").convert("RGBA")
-            add_corners(im)
-            im.save(f"cache/cropped{videoid}.png")
-
-        crop_img = Image.open(f"cache/cropped{videoid}.png")
-        logo = crop_img.convert("RGBA")
-        logo.thumbnail((365, 365), Image.ANTIALIAS)
-        width = int((1280 - 365) / 2)
-        background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 138), mask=logo)
-        background.paste(x, (710, 427), mask=x)
-        background.paste(image3, (0, 0), mask=image3)
-        img = ImageOps.expand(background, border=10, fill=f"{border}")
-        draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype("etc/font2.ttf", 45)
-        ImageFont.truetype("etc/font2.ttf", 70)
-        arial = ImageFont.truetype("etc/font2.ttf", 30)
-        ImageFont.truetype("etc/font.ttf", 30)
-        para = textwrap.wrap(title, width=32)
-        try:
-            draw.text(
-                (450, 35),
-                f"⏤͟͞•꯭꯭𝗞𝗔𝗔𝗟 𝗣𝗟𝗔𝗬𝗜𝗡𝗚",
-                fill="white",
-                stroke_width=1,
-                stroke_fill="white",
-                font=font,
-            )
-            if para[0]:
-                text_w, text_h = draw.textsize(f"{para[0]}", font=font)
-                draw.text(
-                    ((1280 - text_w) / 2, 560),
-                    f"{para[0]}",
-                    fill="white",
-                    stroke_width=1,
-                    stroke_fill="white",
-                    font=font,
-                )
-            if para[1]:
-                text_w, text_h = draw.textsize(f"{para[1]}", font=font)
-                draw.text(
-                    ((1280 - text_w) / 2, 610),
-                    f"{para[1]}",
-                    fill="white",
-                    stroke_width=1,
-                    stroke_fill="white",
-                    font=font,
-                )
-        except:
-            pass
-        text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
-        draw.text(
-            ((1280 - text_w) / 2, 665),
-            f"Duration: {duration} Mins",
-            fill="white",
-            font=arial,
-        )
+        enhancer = ImageEnhance.Brightness(image2)
+        img = enhancer.enhance(1.5)
         try:
             os.remove(f"cache/pfinal{videoid}.png")
             os.remove(f"cache/thumb{videoid}.png")
         except:
-            pass
+            pass 
         img.save(f"cache/pfinal{videoid}.png")
         return f"cache/pfinal{videoid}.png"
     except Exception as e:
@@ -205,105 +119,17 @@ async def queue_thumb(videoid):
                     await f.write(await resp.read())
                     await f.close()
 
-        wxy = "etc/lacey/lacey.jpg"
-        xy = Image.open(wxy)
-        a = Image.new('L', [640, 640], 0)
-        b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
-        c = np.array(xy)
-        d = np.array(a)
-        e = np.dstack((c, d))
-        f = Image.fromarray(e)
-        x = f.resize((107, 107))
-
-        images = random.choice(thumbs)
         border = random.choice(colors)
-        youtube = Image.open(f"cache/queue{videoid}.png")
-        bg = Image.open(f"etc/{images}.png")
+        youtube = Image.open(f"cache/play{videoid}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(30))
-        enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.6)
-
-        image3 = changeImageSize(1280, 720, bg)
-        image5 = image3.convert("RGBA")
-        Image.alpha_composite(background, image5).save(f"cache/temp{videoid}.png")
-
-        Xcenter = youtube.width / 2
-        Ycenter = youtube.height / 2
-        x1 = Xcenter - 250
-        y1 = Ycenter - 250
-        x2 = Xcenter + 250
-        y2 = Ycenter + 250
-        logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((520, 520), Image.ANTIALIAS)
-        logo.save(f"cache/chop{videoid}.png")
-        if not os.path.isfile(f"cache/cropped{videoid}.png"):
-            im = Image.open(f"cache/chop{videoid}.png").convert("RGBA")
-            add_corners(im)
-            im.save(f"cache/cropped{videoid}.png")
-
-        crop_img = Image.open(f"cache/cropped{videoid}.png")
-        logo = crop_img.convert("RGBA")
-        logo.thumbnail((365, 365), Image.ANTIALIAS)
-        width = int((1280 - 365) / 2)
-        background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 2, 138), mask=logo)
-        background.paste(x, (710, 427), mask=x)
-        background.paste(image3, (0, 0), mask=image3)
-        img = ImageOps.expand(background, border=10, fill=f"{border}")
-        draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype("etc/font2.ttf", 45)
-        ImageFont.truetype("etc/font2.ttf", 70)
-        arial = ImageFont.truetype("etc/font2.ttf", 30)
-        ImageFont.truetype("etc/font.ttf", 30)
-        para = textwrap.wrap(title, width=32)
-        try:
-            draw.text(
-                (455, 35),
-                "⏤͟͞•꯭꯭𝗞𝗔𝗔𝗟 𝗧𝗢 𝗤𝗨𝗘𝗨𝗘",
-                fill="white",
-                stroke_width=1,
-                stroke_fill="white",
-                font=font,
-            )
-            if para[0]:
-                text_w, text_h = draw.textsize(f"{para[0]}", font=font)
-                draw.text(
-                    ((1280 - text_w) / 2, 560),
-                    f"{para[0]}",
-                    fill="white",
-                    stroke_width=1,
-                    stroke_fill="white",
-                    font=font,
-                )
-            if para[1]:
-                text_w, text_h = draw.textsize(f"{para[1]}", font=font)
-                draw.text(
-                    ((1280 - text_w) / 2, 610),
-                    f"{para[1]}",
-                    fill="white",
-                    stroke_width=1,
-                    stroke_fill="white",
-                    font=font,
-                )
-        except:
-            pass
-        text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
-        draw.text(
-            ((1280 - text_w) / 2, 665),
-            f"Duration: {duration} Mins",
-            fill="white",
-            font=arial,
-        )
-
+        enhancer = ImageEnhance.Brightness(image2)
+        img = enhancer.enhance(1.5)
         try:
             os.remove(f"cache/qfinal{videoid}.png")
             os.remove(f"cache/thumb{videoid}.png")
         except:
             pass
-        file = f"cache/qfinal{videoid}.png"
         img.save(f"cache/qfinal{videoid}.png")
         return f"cache/qfinal{videoid}.png"
     except Exception as e:
