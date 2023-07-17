@@ -178,7 +178,7 @@ async def vplay(c: Royalboyamit, m: Message):
             if len(m.command) < 2:
                 await m.reply_photo(
                     photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg",
-                    text="💬**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**", 
+                    caption=f"**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**", 
              ) 
             else:
                 loser = await c.send_message(chat_id, f"**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠...**"
@@ -248,7 +248,7 @@ async def vplay(c: Royalboyamit, m: Message):
         if len(m.command) < 2:
             await m.reply_photo(
                      photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg",
-                     text="💫**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**", 
+                     caption=f"**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**", 
          ) 
         else:
             loser = await c.send_message(chat_id, f"**🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠...**")
