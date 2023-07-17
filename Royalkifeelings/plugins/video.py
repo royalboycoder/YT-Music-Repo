@@ -176,7 +176,7 @@ async def vplay(c: Royalboyamit, m: Message):
                 )
         else:
             if len(m.command) < 2:
-                await m.reply_text(
+                await m.reply_photo(
                     photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg",
                     text="💬**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**", 
              ) 
@@ -246,7 +246,8 @@ async def vplay(c: Royalboyamit, m: Message):
 
     else:
         if len(m.command) < 2:
-            await m.reply_text(
+            await m.reply_photo(
+                     photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg",
                      text="💫**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**", 
          ) 
         else:
