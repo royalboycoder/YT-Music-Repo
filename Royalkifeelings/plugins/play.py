@@ -32,7 +32,7 @@ def ytsearch(query):
 
 
 async def ytdl(format: str, link: str):
-    stdout, stderr = await bash(f'yt-dlp --geo-bypass -g -f "[height<=?720][width<=?1280]" {link}')
+    stdout, stderr = await bash(f'yt-dlp --geo-bypass -g -f "[height<=?2160][width<=?1280]" {link}')
     if stdout:
         return 1, stdout.split("\n")[0]
     return 0, stderr
@@ -154,6 +154,7 @@ async def play(c: Royalboyamit, m: Message):
     else:
         if len(m.command) < 2:
          await m.reply_text(
+                    photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg", 
                     text="**ᴜsᴀɢᴇ: /play ɢɪᴠᴇ ᴀ ᴛɪᴛʟᴇ sᴏɴɢ ᴛᴏ ᴘʟᴀʏ ᴍᴜsɪᴄ**"),
         
         else:
@@ -190,14 +191,14 @@ async def play(c: Royalboyamit, m: Message):
                             f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                         )
                         await m.reply_photo(
-                            photo=queueimg,
+                            photo=f"https://te.legra.ph/file/4d71c4bd3802a77b9c597.jpg",
                             caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗦𝗼𝗻𝗴 ❤️ 𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻 💫🤟**:{requester}",
                             reply_markup=InlineKeyboardMarkup(keyboard),
                         )
                     else:
                         try:
                             await pokemon.edit(
-                            f"**🔄 𝙋𝙧𝙤𝙘𝙘𝙚𝙨𝙨𝙞𝙣𝙜 ...**"
+                            f"**🔄 𝙋𝙧𝙤𝙘𝙘𝙚𝙨𝙨𝙞𝙣𝙜...**"
                         )
                             await call_py.join_group_call(
                                 chat_id,
