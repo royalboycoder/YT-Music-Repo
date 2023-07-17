@@ -72,7 +72,7 @@ async def play_thumb(videoid):
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         enhancer = ImageEnhance.Brightness(image2)
-        img = enhancer.enhance(1.5)
+        img = ImageOps.expand(background, border=10, fill=f"{border}")
         try:
             os.remove(f"cache/pfinal{videoid}.png")
             os.remove(f"cache/thumb{videoid}.png")
