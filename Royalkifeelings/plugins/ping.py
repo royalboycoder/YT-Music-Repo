@@ -1,9 +1,10 @@
 import requests
 from datetime import datetime
 from pyrogram import filters, Client
+from Royalkifeelings import bot as Royalboyamit
 # ping checker
 
-@Client.on_message(filters.command(["ping"], ["/", ".", "!"]))
+@Royalboyamit.on_message(filters.command(["ping"], ["/", ".", "!"]))
 async def ping(Client, message):
     start = datetime.now()
     loda = await message.reply_text("**» 𝐊ᴀᴀʟ 𝐌ᴜsɪᴄ**")
