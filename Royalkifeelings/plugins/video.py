@@ -43,7 +43,7 @@ async def ytdl(link):
         "yt-dlp",
         "-g",
         "-f",
-        "best[height<=?1080][width<=?720]",
+        "best[height<=?2160][width<=?1440]",
         f"{link}",
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
