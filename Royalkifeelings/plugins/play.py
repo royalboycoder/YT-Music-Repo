@@ -190,7 +190,7 @@ async def play(c: Royalboyamit, m: Message):
                             f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                         )
                         await m.reply_photo(
-                            photo=queueimg,
+                            photo=f"https://te.legra.ph/file/4d71c4bd3802a77b9c597.jpg", 
                             caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗦𝗼𝗻𝗴 ❤️ 𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻 💫🤟**:{requester}",
                             reply_markup=InlineKeyboardMarkup(keyboard),
                         )
