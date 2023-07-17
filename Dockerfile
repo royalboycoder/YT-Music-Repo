@@ -1,5 +1,5 @@
 FROM nikolaik/python-nodejs:python3.9-nodejs18
-python:3.10-slim-buster
+
 RUN apt-get update -y
 RUN apt-get install git curl python3-pip ffmpeg -y
 RUN python3 -m pip install --upgrade pip
