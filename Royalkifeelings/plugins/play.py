@@ -164,7 +164,7 @@ async def play(c: Royalboyamit, m: Message):
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await pokemon.edit("**🌸𝗦𝗼𝗻𝗴 𝗡𝗼𝘁 𝗙𝗼𝘂𝗻𝗱 ✌ 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 𝗣𝗿𝗼𝗯𝗹𝗲𝗺**")
+                await pokemon.edit("**🌸𝗦𝗼𝗻𝗴 𝗡𝗼𝘁 𝗙𝗼𝘂𝗻𝗱 😅 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 𝗣𝗿𝗼𝗯𝗹𝗲𝗺**")
             else:
                 songname = search[0]
                 title = search[0]
