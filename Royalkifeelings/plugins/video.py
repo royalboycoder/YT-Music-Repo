@@ -43,7 +43,7 @@ async def ytdl(link):
         "yt-dlp",
         "-g",
         "-f",
-        "best[height<=?720][width<=?1280]",
+        "best[height<=?1080][width<=?720]",
         f"{link}",
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
@@ -155,7 +155,7 @@ async def vplay(c: Royalboyamit, m: Message):
                     esport = MediumQualityVideo()
                 elif Q == 360:
                     esport = LowQualityVideo()
-                await loser.edit("🙊")
+                await loser.edit("🫀")
                 await call_py.join_group_call(
                     chat_id,
                     AudioVideoPiped(
@@ -177,6 +177,7 @@ async def vplay(c: Royalboyamit, m: Message):
         else:
             if len(m.command) < 2:
                 await m.reply_text(
+                    photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg",
                     text="💬**Usage: /play Give a Title Song To Play Music or /vplay for Video Play**", 
              ) 
             else:
@@ -277,7 +278,7 @@ async def vplay(c: Royalboyamit, m: Message):
                         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                         buttons = stream_markup(user_id, dlurl)
                         await m.reply_photo(
-                            photo=queueimg,
+                            photo=f"https://te.legra.ph/file/4d71c4bd3802a77b9c597.jpg",
                             reply_markup=InlineKeyboardMarkup(buttons),
                             caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗦𝗼𝗻𝗴 ❤️ 𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻 💫🤟**\n🧸 **Request by:** {requester}",
                         )
