@@ -47,13 +47,13 @@ async def start(_, message: Message):
 💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇ𝐒ᴛɪᴏɴ𝐒 ᴛʜᴇɴ
 ᴅᴍ ᴛᴏ ᴍʏ [𝐋ᴇɢᴇɴᴅ 𝐎ᴡɴᴇʀ](https://t.me/royal_boy_amit) ...
 ━━━━━━━━━━━━━━━━━━━━━━━━**""",
-       reply_markup=InlineKeyboardMarkup(
-            [
+        reply_markup=InlineKeyboardMarkup(
                 [
-                    InlineKeyboardButton(
-                        "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/royalkifeelings")
-                ]
+                    [
+                        InlineKeyboardButton(
+                            "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/royalkifeelings")
+                    ]
                 
-           ]
-        ),
-    )
+               ]
+            ),
+        )
