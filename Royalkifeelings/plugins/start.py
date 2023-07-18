@@ -29,64 +29,31 @@ async def _human_time_duration(seconds):
 
 @Royalboyamit.on_message(filters.command(["start", "help"]) & ~filters.group)
 async def start(_, message: Message):
-    await message.reply_photo(
-        photo=f"https://graph.org/file/d1dd0851e1500969cb9ba.jpg",
-        caption=f"""**𝐇𝐞𝐥𝐥𝐨 {BOT_NAME}✨ 𝐓𝐡𝐢𝐬 𝐀𝐝𝐯𝐚𝐧𝐜𝐞 🥀 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐌𝐮𝐬𝐢𝐜 🎶 𝐁𝐨𝐭 𝐑𝐮𝐧 𝐎𝐧 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 🥀 𝐕𝐩𝐬 💫𝐒𝐞𝐫𝐯𝐞𝐫 🌎 𝐅𝐞𝐞𝐥 ❤️ 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐌𝐮𝐬𝐢𝐜 🎧 𝐈𝐧 𝐕𝐜 😎🤟
-📡 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲: [𝐋σⱱəᴙ 𝐖σᴙɭɗ 𝐂ɦɑʈʈɪŋʛ 𝐇ʋB](https://t.me/royalkifeelings) 💞...**""",
-     reply_markup=InlineKeyboardMarkup(
+        photo=f"https://graph.org/file/f26f1b65bd824a87909a0.jpg",
+        caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
+🥀 𝐇𝐞𝐥𝐥𝐨, 𝐈 𝐀𝐦 𝐀𝐧 📀 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐀𝐧𝐝
+𝐒𝐮𝐩𝐞𝐫𝐟𝐚𝐬𝐭 𝐕𝐂 𝐏𝐥𝐚𝐲𝐞𝐫 » 𝐅𝐨𝐫 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
+𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐀𝐧𝐝 𝐆𝐫𝐨𝐮𝐩𝐬 ✨ ...
+
+💐 𝐅𝐞𝐞𝐥 𝐅𝐫𝐞𝐞 𝐓𝐨: 🕊️ 𝐀𝐝𝐝 𝐌𝐞 𝐢𝐧 𝐘𝐨𝐮𝐫
+𝐆𝐫𝐨𝐮𝐩 🌺 𝐀𝐧𝐝 𝐄𝐧𝐣𝐨𝐲 🌿 𝐒𝐮𝐩𝐞𝐫 𝐇𝐢𝐠𝐡
+𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 🥀 ...
+┏━━━━━━━━━━━━━━━━━┓
+┣★ 𝐂ʀᴇᴀᴛᴏʀ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royal_boy_amit)
+┣★ 𝐔ᴘᴅᴀᴛᴇ𝐒 : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royalkifeelings_12)
+┣★ 𝐒ᴜᴘᴘᴏʀᴛ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royalkifeelings)
+┗━━━━━━━━━━━━━━━━━┛
+
+💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇ𝐒ᴛɪᴏɴ𝐒 ᴛʜᴇɴ
+ᴅᴍ ᴛᴏ ᴍʏ [𝐋ᴇɢᴇɴᴅ 𝐎ᴡɴᴇʀ](https://t.me/royal_boy_amit) ...
+━━━━━━━━━━━━━━━━━━━━━━━━**""",
+    reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ 𝐀𝐃𝐃 𝐌𝐄 ❱ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "✯ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 ✯", url=f"https://t.me/royalkifeelings_12"),
-
-                    InlineKeyboardButton(
-                        "✯ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 ✯", url=f"https://t.me/royalkifeelings"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        text="🥀 ❰ 𝐎𝐰𝐧𝐞𝐫シ︎𝐱𝐃 ❱ ✨", url=f"https://t.me/royal_boy_amit")
+                        "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/royalkifeelings")
                 ]
+                
            ]
-        ),    
-     )
-
-
-@Royalboyamit.on_message(filters.command(["repo", "amit"]))
-async def help(client: Royalboyamit, message: Message):
-    await message.reply_text(
-        text=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 👅 𝗜𝘀 𝗮𝗻 𝗽𝗼𝘄𝗲𝗿𝗳𝘂𝗹 🌏 𝗺𝘂𝘀𝗶𝗰 𝘀𝗼𝘂𝗿𝗰𝗲 🚬 𝗠𝗮𝗸𝗲 𝘂𝗿 𝗳𝗿𝗼𝗸 ⚜️ 𝗮𝗻𝗱 𝗴𝗶𝘃𝗲 𝗼𝗻𝗲 ⭐ 𝗳𝗼𝗿 𝗼𝘂𝗿 𝗵𝗮𝗿𝗱 𝘄𝗼𝗿𝗸 🥀**",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "⭐ 𝗥𝗲𝗽𝗼 ✨", url=f"https://te.legra.ph/file/a615d91c0ef7caaa70fdd.mp4"
-                    )
-                ]
-            ]
-        ),
-    )
-
-@Royalboyamit.on_message(filters.command(["amit"]) & filters.group)
-async def start(client: Royalboyamit, message: Message):
-    current_time = datetime.utcnow()
-    uptime_sec = (current_time - START_TIME).total_seconds()
-    uptime = await _human_time_duration(int(uptime_sec))
-    await message.reply_text(
-        f"""✔ **ʙᴏᴛ ɪs ʀᴜɴɴɪɴɢ**\n<b>☣ **ᴜᴘᴛɪᴍᴇ:**</b> `{uptime}`""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "✯ 𝐎𝐰𝐧𝐞𝐫-𝐱𝐃 ✯", url=f"https://t.me/royal_boy_amit"
-                    ),
-                    InlineKeyboardButton(
-                        "✯ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 ✯", url=f"https://t.me/royalkifeelings"
-                    ),
-                ]
-            ]
         ),
     )
