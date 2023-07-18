@@ -29,6 +29,7 @@ async def _human_time_duration(seconds):
 
 @Royalboyamit.on_message(filters.command(["start", "help"]) & ~filters.group)
 async def start(_, message: Message):
+    await message.reply_photo(
         photo=f"https://graph.org/file/f26f1b65bd824a87909a0.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 🥀 𝐇𝐞𝐥𝐥𝐨, 𝐈 𝐀𝐦 𝐀𝐧 📀 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐀𝐧𝐝
@@ -48,12 +49,12 @@ async def start(_, message: Message):
 ᴅᴍ ᴛᴏ ᴍʏ [𝐋ᴇɢᴇɴᴅ 𝐎ᴡɴᴇʀ](https://t.me/royal_boy_amit) ...
 ━━━━━━━━━━━━━━━━━━━━━━━━**""",
         reply_markup=InlineKeyboardMarkup(
+            [
                 [
-                    [
-                        InlineKeyboardButton(
-                            "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/royalkifeelings")
-                    ]
+                    InlineKeyboardButton(
+                        "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/royalkifeelings")
+                ]
                 
-               ]
-            ),
-        )
+           ]
+        ),
+    )
