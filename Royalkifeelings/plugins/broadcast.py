@@ -49,7 +49,7 @@ async def broadcast(_, message: Message):
 
 
 @bot.on_message(filters.command("broadcast_pin") & filters.user(OWNER_ID))
-async def broadcast_message_pin(c: Client, message: Message):
+async def broadcast(_, message: Message):
     if not message.reply_to_message:
         pass
     else:
