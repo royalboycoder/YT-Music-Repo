@@ -7,7 +7,7 @@ from Royalkifeelings import bot, Royalboyamit
 
 
 @bot.on_message(filters.command("broadcast") & filters.user(OWNER_ID))
-async def broadcast_message_nopin(c: Bot, message: Message):
+async def broadcast(_, message: Message):
     if not message.reply_to_message:
         pass
     else:
