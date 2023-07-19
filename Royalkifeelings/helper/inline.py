@@ -33,12 +33,6 @@ def audio_markup(user_id):
 def stream_markup(user_id, dlurl):
   buttons = [
     [
-      InlineKeyboardButton(text="II", callback_data=f'cbpause | {user_id}'),
-      InlineKeyboardButton(text="▷", callback_data=f'cbresume | {user_id}'),
-      InlineKeyboardButton(text="‣‣I", callback_data=f'cbskip | {user_id}'),
-      InlineKeyboardButton(text="▢", callback_data=f'cbstop | {user_id}')
-    ],
-    [
       InlineKeyboardButton(text="➷ 𝐔𝗽𝗱𝗮𝘁𝗲𝐒 ➹", url=f"https://t.me/royalkifeelings_12"),
       InlineKeyboardButton(text="➹ 𝐒𝘂𝗽𝗽𝗼𝗿𝐓 ➷", url=f"https://t.me/royalkifeelings"),
     ],
@@ -50,11 +44,6 @@ def stream_markup(user_id, dlurl):
 
 def menu_markup(user_id):
   buttons = [
-     [InlineKeyboardButton(text="II", callback_data=f'cbpause | {user_id}'),
-      InlineKeyboardButton(text="▷", callback_data=f'cbresume | {user_id}')],
-     [InlineKeyboardButton(text="‣‣I", callback_data=f'cbskip | {user_id}'),
-      InlineKeyboardButton(text="▢", callback_data=f'cbstop | {user_id}')
-    ],
      [InlineKeyboardButton(text="🔇", callback_data=f'cbmute | {user_id}'),
       InlineKeyboardButton(text="ᴜᴩᴅᴀᴛᴇs", url=f"https://t.me/spotif_ymusic31_bot"),
       InlineKeyboardButton(text="🔊", callback_data=f'cbunmute | {user_id}')],
