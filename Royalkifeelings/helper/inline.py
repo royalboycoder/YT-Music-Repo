@@ -46,7 +46,7 @@ def stream_markup(user_id, dlurl):
       InlineKeyboardButton(text="★ 𝐂ʟᴏ𝐬ᴇ ★", callback_data=f'cls'),
     ],
   ]
-  eturn buttons
+  return buttons
 
 def menu_markup(user_id):
   buttons = [
