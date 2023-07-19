@@ -23,6 +23,8 @@ def audio_markup(user_id):
     [
       InlineKeyboardButton(text="➷ 𝐔𝗽𝗱𝗮𝘁𝗲𝐒 ➹", url=f"https://t.me/royalkifeelings_12"),
       InlineKeyboardButton(text="➹ 𝐒𝘂𝗽𝗽𝗼𝗿𝐓 ➷", url=f"https://t.me/royalkifeelings"),
+    ],
+    [
       InlineKeyboardButton(text="✯ 𝗢𝘄𝗻𝗲𝗿'𝘅𝗗 ✯", url=f"https://t.me/royal_boy_amit"),
     ],
     [
@@ -36,13 +38,15 @@ def stream_markup(user_id, dlurl):
     [
       InlineKeyboardButton(text="➷ 𝐔𝗽𝗱𝗮𝘁𝗲𝐒 ➹", url=f"https://t.me/royalkifeelings_12"),
       InlineKeyboardButton(text="➹ 𝐒𝘂𝗽𝗽𝗼𝗿𝐓 ➷", url=f"https://t.me/royalkifeelings"),
+    ],
+    [
       InlineKeyboardButton(text="✯ 𝗢𝘄𝗻𝗲𝗿'𝘅𝗗 ✯", url=f"https://t.me/royal_boy_amit"),
     ], 
     [
       InlineKeyboardButton(text="★ 𝐂ʟᴏ𝐬ᴇ ★", callback_data=f'cls'),
     ],
   ]
-  return buttons
+  eturn buttons
 
 def menu_markup(user_id):
   buttons = [
