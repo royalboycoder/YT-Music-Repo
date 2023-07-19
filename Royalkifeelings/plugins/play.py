@@ -126,7 +126,7 @@ async def play(c: Royalboyamit, m: Message):
                 await pokemon.delete()
                 await m.reply_photo(
                     photo=playimg,
-                    caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗦𝗼𝗻𝗴 ❤️ 𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻 💫🤟\n\n**𝗥𝗲𝗾𝘂𝘀𝘁𝗲𝗱 𝗯𝘆:{m.from_user.mention()}",
+                    caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ơɯ ❤️ Ʌɗɗəɗ Søŋʛ 💫\n**ƦɛqʉʂƮɜɖ Ɓɤ :{m.from_user.mention()}",
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
             else:
@@ -144,7 +144,7 @@ async def play(c: Royalboyamit, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
                     photo=playimg,
-                    caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗡𝗼𝘄 😄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 📀 𝗔𝘁 🤟\n\n👤𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗕𝘆:{requester}**",
+                    caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ🤟\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}**",
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
              except Exception as e:
@@ -159,12 +159,12 @@ async def play(c: Royalboyamit, m: Message):
         
         else:
             pokemon = await m.reply_text(
-        f"**🔎 𝙎𝙚𝙖𝙧𝙘𝙝𝙞𝙣𝙜 ...**"
+        f"**Şєʌɾƈɦɪɲʛ ຖơɯ...**"
     )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await pokemon.edit("**🌸𝗦𝗼𝗻𝗴 𝗡𝗼𝘁 𝗙𝗼𝘂𝗻𝗱 😅 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 𝗣𝗿𝗼𝗯𝗹𝗲𝗺**")
+                await pokemon.edit("**🌸 Søɴʛ Ɲøʈ Fɵʉŋɖ 😅 Spɘɭɭɪŋɢ Ƥʀøɓɭəɱ**")
             else:
                 songname = search[0]
                 title = search[0]
@@ -192,13 +192,13 @@ async def play(c: Royalboyamit, m: Message):
                         )
                         await m.reply_photo(
                             photo=playimg,
-                            caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗦𝗼𝗻𝗴 ❤️ 𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻 💫🤟**:{requester}",
+                            caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ ❤️ Ʌɗɗəɗ Søŋʛ 💫🤟** :{requester}",
                             reply_markup=InlineKeyboardMarkup(keyboard),
                         )
                     else:
                         try:
                             await pokemon.edit(
-                            f"**🔄 𝙋𝙧𝙤𝙘𝙘𝙚𝙨𝙨𝙞𝙣𝙜...**"
+                            f"**Ƥɾơƈєƨƨɪɲʛ ຖơɯ...**"
                         )
                             await call_py.join_group_call(
                                 chat_id,
@@ -213,7 +213,7 @@ async def play(c: Royalboyamit, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=playimg,
-                                caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗡𝗼𝘄 😄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 📀 𝗔𝘁 🤟\n\n👤𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗕𝘆:{requester}**",
+                                caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ 🤟 \nƦɛqʉʂƮɜɖ Ɓɤ :{requester}**",
                                 reply_markup=InlineKeyboardMarkup(keyboard),
                             )
                         except Exception as ep:
