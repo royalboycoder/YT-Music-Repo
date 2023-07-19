@@ -125,7 +125,7 @@ async def play(c: Royalboyamit, m: Message):
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await pokemon.delete()
                 await m.reply_photo(
-                    photo=f"https://te.legra.ph/file/7a707289b3f970a0ae59d.jpg",
+                    photo=playimg,
                     caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗦𝗼𝗻𝗴 ❤️ 𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻 💫🤟\n\n**𝗥𝗲𝗾𝘂𝘀𝘁𝗲𝗱 𝗯𝘆:{m.from_user.mention()}",
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
@@ -143,7 +143,7 @@ async def play(c: Royalboyamit, m: Message):
                 await pokemon.delete()
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
-                    photo=f"https://te.legra.ph/file/4d71c4bd3802a77b9c597.jpg",
+                    photo=playimg,
                     caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗡𝗼𝘄 😄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 📀 𝗔𝘁 🤟\n\n👤𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗕𝘆:{requester}**",
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
@@ -191,7 +191,7 @@ async def play(c: Royalboyamit, m: Message):
                             f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                         )
                         await m.reply_photo(
-                            photo=f"https://te.legra.ph/file/4d71c4bd3802a77b9c597.jpg",
+                            photo=playimg,
                             caption=f"**⏤͟͞•꯭꯭𝗞𝗮𝗮𝗹 𝗠𝘂𝘀𝗶𝗰 𝗦𝗼𝗻𝗴 ❤️ 𝗣𝗼𝘀𝗶𝘁𝗶𝗼𝗻 💫🤟**:{requester}",
                             reply_markup=InlineKeyboardMarkup(keyboard),
                         )
