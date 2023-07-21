@@ -9,6 +9,7 @@ from pyrogram.types import (
 from Royalkifeelings.helper.decorators import authorized_users_only
 from Royalkifeelings.helper.filters import command, other_filters
 from Royalkifeelings.helper.queues import QUEUE, clear_queue
+from Royalkifeelings.handler.thumbnail import play_thumb, queue_thumb
 from Royalkifeelings.helper.utils import skip_current_song, skip_item
 from Royalkifeelings.callmusic.config import BOT_USERNAME
 from Royalkifeelings import bot as Royalboyamit
