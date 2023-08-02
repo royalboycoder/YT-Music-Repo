@@ -3,7 +3,7 @@ from pyrogram import filters
 from Royalkifeelings import bot as Royalboyamit
 from pyrogram.types import Message
 from Royalkifeelings.helper.filters import command, other_filters
-from Royalkifeelings.helper.decorators import sudo_users_only, errors
+from Royalkifeelings.helper.decorators import OWNER_ID, errors
 
 downloads = os.path.realpath("callmusic/downloads")
 raw = os.path.realpath(".")
