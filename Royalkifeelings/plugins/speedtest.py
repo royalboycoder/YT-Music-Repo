@@ -4,7 +4,7 @@ from pyrogram import filters
 from Royalkifeelings import bot as Royalboyamit
 from pyrogram.types import Message
 from Royalkifeelings.helper.filters import command
-from Royalkifeelings.helper.decorators import sudo_users_only
+from Royalkifeelings.helper.decorators import OWNER_ID
 
 
 def testspeed(m):
@@ -23,8 +23,8 @@ def testspeed(m):
     return result
 
 
-@Royalboyamit.on_message(command("speedtest"))
-@sudo_users_only
+@bot.on_message(filters.command("sp") & filters.user(OWNER_ID))
+@OWNER_ID
 async def speedtest_function(Royalboyamit: Royalboyamit, message: Message):
     m = await message.reply_text("❤")
     loop = asyncio.get_event_loop()
