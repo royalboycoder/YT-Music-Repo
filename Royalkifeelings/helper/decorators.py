@@ -33,7 +33,7 @@ def authorized_users_only(func: Callable) -> Callable:
     return decorator
 
 
-def sudo_users_only(func: Callable) -> Callable:
+def OWNER_ID(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
         if message.from_user.id in OWNER_ID:
             return await func(client, message)
