@@ -10,7 +10,7 @@ raw = os.path.realpath(".")
 
 @Royalboyamit.on_message(command(["rmd", "clear"]) & ~filters.edited)
 @errors
-@sudo_users_only
+@OWNER_ID
 async def clear_downloads(_, message: Message):
     ls_dir = os.listdir(downloads)
     if ls_dir:
@@ -23,7 +23,7 @@ async def clear_downloads(_, message: Message):
         
 @Royalboyamit.on_message(command(["rmw", "clean"]) & ~filters.edited)
 @errors
-@sudo_users_only
+@OWNER_ID
 async def clear_raw(_, message: Message):
     ls_dir = os.listdir(raw)
     if ls_dir:
@@ -37,7 +37,7 @@ async def clear_raw(_, message: Message):
 
 @Royalboyamit.on_message(command(["cleanup"]) & ~filters.edited)
 @errors
-@sudo_users_only
+@OWNER_ID
 async def cleanup(_, message: Message):
     pth = os.path.realpath(".")
     ls_dir = os.listdir(pth)
