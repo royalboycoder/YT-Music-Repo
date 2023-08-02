@@ -21,7 +21,7 @@ async def clear_downloads(_, message: Message):
         await message.reply_text("❌ **NO FILES DOWNLOADED**")
 
         
-@Royalboyamit.on_message(command(["rmw", "clean"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["cl", "clean"]) & ~filters.edited)
 @errors
 @OWNER_ID
 async def clear_raw(_, message: Message):
@@ -35,7 +35,7 @@ async def clear_raw(_, message: Message):
         await message.reply_text("❌ **NO RAW FILES FOUND**")
 
 
-@Royalboyamit.on_message(command(["cleanup"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["cls"]) & ~filters.edited)
 @errors
 @OWNER_ID
 async def cleanup(_, message: Message):
