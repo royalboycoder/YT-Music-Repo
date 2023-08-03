@@ -2,7 +2,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
-from Royalkifeelings.callmusic.config import OWNER_ID
+from Royalkifeelings.callmusic.config import SUDO_USER_ONLY
 from Royalkifeelings import bot, Royalboyamit
 
 
