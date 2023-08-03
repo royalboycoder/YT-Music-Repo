@@ -322,5 +322,5 @@ async def cbskip(_, query: CallbackQuery):
                                 caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ 🤟 \n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}",
                             )
                         except Exception as ep:
-                            await loser.delete()
+                            await query.message.delete()
                             await m.reply_text(f"🚫 error: `{ep}`")
