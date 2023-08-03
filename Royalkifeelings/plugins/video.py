@@ -144,7 +144,7 @@ async def vplay(c: Royalboyamit, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 buttons = audio_markup(user_id)
                 await m.reply_photo(
-                    photo=thumbnail,
+                    photo=playimg,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ơɯ ❤️ Ʌɗɗəɗ Ʋɪԃҽᴏ Søŋʛ 💫\n\n**ƦɛqʉʂƮɜɖ Ɓɤ :{m.from_user.mention()}**")
             else:
@@ -169,7 +169,7 @@ async def vplay(c: Royalboyamit, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 buttons = audio_markup(user_id)
                 await m.reply_photo(
-                    photo=thumbnail,
+                    photo=playimg,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ🤟\n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}",
                 )
@@ -212,7 +212,7 @@ async def vplay(c: Royalboyamit, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             buttons = stream_markup(user_id, videoid)
                             await m.reply_photo(
-                                photo=queueimg,
+                                photo=playimg,
                                 reply_markup=InlineKeyboardMarkup(buttons),
                                 caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ🤟\n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}",
                             )
@@ -278,7 +278,7 @@ async def vplay(c: Royalboyamit, m: Message):
                         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                         buttons = stream_markup(user_id, dlurl)
                         await m.reply_photo(
-                            photo=f"https://te.legra.ph/file/4d71c4bd3802a77b9c597.jpg",
+                            photo=playimg,
                             reply_markup=InlineKeyboardMarkup(buttons),
                             caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ ❤️ Ʌɗɗəɗ Søŋʛ 💫🤟\n** :{requester}",
                         )
