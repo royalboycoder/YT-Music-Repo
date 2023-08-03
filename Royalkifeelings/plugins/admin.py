@@ -313,7 +313,7 @@ async def cbskip(_, query: CallbackQuery):
         )
     else:
         add_to_queue(chat_id, songname, ytlink, url, "Video,Audio", Q)
-                            await loser.delete()
+                            await query.message.delete()
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             buttons = stream_markup(user_id, dlurl)
                             await m.reply_photo(
