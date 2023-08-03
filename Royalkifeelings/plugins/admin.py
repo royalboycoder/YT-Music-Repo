@@ -312,8 +312,8 @@ async def cbskip(_, query: CallbackQuery):
             show_alert=True,
         )
     else:
-        await query.answer(chat_id, songname, ytlink, url, "Video,Audio", Q)
-                            await query.message.delete()
+        add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                            await pokemon.delete() 
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             buttons = stream_markup(user_id, dlurl)
                             await m.reply_photo(
@@ -322,5 +322,5 @@ async def cbskip(_, query: CallbackQuery):
                                 caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ 🤟 \n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}",
                             )
                         except Exception as ep:
-                            await query.message.delete()
+                            await pokemon.delete() 
                             await m.reply_text(f"🚫 error: `{ep}`")
