@@ -3,14 +3,14 @@ from pyrogram import filters
 from Royalkifeelings import bot as Royalboyamit
 from pyrogram.types import Message
 from Royalkifeelings.helper.filters import command, other_filters
-from Royalkifeelings.helper.decorators import OWNER_ID, errors
+from Royalkifeelings.helper.decorators import sudo_users_only, errors
 
 downloads = os.path.realpath("callmusic/downloads")
 raw = os.path.realpath(".")
 
-@Royalboyamit.on_message(command(["rmd", "clear"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["cls", "clear"]) & ~filters.edited)
 @errors
-@OWNER_ID
+@sudo_users_only
 async def clear_downloads(_, message: Message):
     ls_dir = os.listdir(downloads)
     if ls_dir:
@@ -23,7 +23,7 @@ async def clear_downloads(_, message: Message):
         
 @Royalboyamit.on_message(command(["cl", "clean"]) & ~filters.edited)
 @errors
-@OWNER_ID
+@sudo_users_only
 async def clear_raw(_, message: Message):
     ls_dir = os.listdir(raw)
     if ls_dir:
@@ -37,7 +37,7 @@ async def clear_raw(_, message: Message):
 
 @Royalboyamit.on_message(command(["cls"]) & ~filters.edited)
 @errors
-@OWNER_ID
+@sudo_users_only
 async def cleanup(_, message: Message):
     pth = os.path.realpath(".")
     ls_dir = os.listdir(pth)
