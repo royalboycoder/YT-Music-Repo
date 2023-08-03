@@ -24,7 +24,7 @@ def testspeed(m):
 
 
 @Royalboyamit.on_message(filters.command("sp") & filters.user(OWNER_ID))
-@OWNER_ID
+@sudo_users_only
 async def speedtest_function(Royalboyamit: Royalboyamit, message: Message):
     m = await message.reply_text("❤")
     loop = asyncio.get_event_loop()
