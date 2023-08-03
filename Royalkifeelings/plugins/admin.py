@@ -312,10 +312,15 @@ async def cbskip(_, query: CallbackQuery):
             show_alert=True,
         )
     else:
-        await query.answer("ɢᴏᴇs ᴛᴏ ᴛʜᴇ ɴᴇxᴛ ᴛʀᴀᴄᴋ, ᴘʀᴏᴄᴄᴇssɪɴɢ...")
-        await query.message.delete()
-        await m.reply_photo(
-            photo=playimg,
-            caption=f"✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ 🤟 \n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}..",
-        )
-        remove_if_exists(message)
+        add_to_queue(chat_id, songname, ytlink, url, "Video,Audio", Q)
+                            await loser.delete()
+                            requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
+                            buttons = stream_markup(user_id, dlurl)
+                            await m.reply_photo(
+                                photo=playimg,
+                                reply_markup=InlineKeyboardMarkup(buttons),
+                                caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ 🤟 \n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}",
+                            )
+                        except Exception as ep:
+                            await loser.delete()
+                            await m.reply_text(f"🚫 error: `{ep}`")
