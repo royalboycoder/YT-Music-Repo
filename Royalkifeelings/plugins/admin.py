@@ -312,15 +312,10 @@ async def cbskip(_, query: CallbackQuery):
             show_alert=True,
         )
     else:
-        add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                            await pokemon.delete() 
-                            requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
-                            buttons = stream_markup(user_id, dlurl)
-                            await m.reply_photo(
-                                photo=playimg,
-                                reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ 🤟 \n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}",
-                            )
-                        except Exception as ep:
-                            await pokemon.delete() 
-                            await m.reply_text(f"🚫 error: `{ep}`")
+        await query.answer("ɢᴏᴇs ᴛᴏ ᴛʜᴇ ɴᴇxᴛ ᴛʀᴀᴄᴋ, ᴘʀᴏᴄᴄᴇssɪɴɢ...")
+        await query.message.delete()
+        await _.send_message(
+            chat_id,
+            text=f"✅ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐍𝐞𝐱𝐭 𝐒𝐨𝐧𝐠\n𝐅𝐫𝐨𝐦 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 💞 ..",
+        )
+        remove_if_exists(message)
