@@ -146,7 +146,7 @@ async def vplay(c: Royalboyamit, m: Message):
                 await m.reply_photo(
                     photo=thumbnail,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ơɯ ❤️ Ʌɗɗəɗ Ʋɪԃҽᴏ Søŋʛ 💫\n\n**ƦɛqʉʂƮɜɖ Ɓɤ :{m.from_user.mention()}**"
+                    caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ơɯ ❤️ Ʌɗɗəɗ Ʋɪԃҽᴏ Søŋʛ 💫\n\n**ƦɛqʉʂƮɜɖ Ɓɤ :{m.from_user.mention()}**")
             else:
                 if Q == 720:
                     esport = HighQualityVideo()
