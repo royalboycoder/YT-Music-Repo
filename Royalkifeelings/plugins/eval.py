@@ -11,7 +11,7 @@ from inspect import getfullargspec
 from sys import version as pyver
 from Royalkifeelings.callmusic.config import BOT_USERNAME
 from Royalkifeelings import bot as Royalboyamit
-from Royalkifeelings.helper.decorators import OWNER_ID
+from Royalkifeelings.helper.decorators import sudo_users_only
 from Royalkifeelings.helper.filters import command
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
@@ -31,7 +31,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 
 
 @Royalboyamit.on_message(command(["eval", f"eval@{BOT_USERNAME}"]) & ~filters.edited)
-@OWNER_ID
+@sudo_users_only
 async def executor(Royalboyamit, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="__ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ sᴏ ɪ ᴡɪʟʟ ᴛʀʏ ᴛᴏ ᴇxᴇᴄᴜᴛᴇ ɪᴛ.__")
@@ -106,7 +106,7 @@ async def runtime_func_cq(_, cq):
 
 
 @Royalboyamit.on_message(command(["sh", f"sh@{BOT_USERNAME}"]) & ~filters.edited)
-@OWNER_ID
+@sudo_users_only
 async def shellrunner(Royalboyamit, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**usage:**\n\n/sh echo oni-chan")
