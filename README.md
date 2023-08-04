@@ -1,6 +1,6 @@
-<p align="center"><a href="https://t.me/royalkifeelings"><img src=""></a></p>
+<p align="center"><a href="https://t.me/royalkifeelings"><img src="https://graph.org/file/1cf39e632aee473343a9f.jpg"></a></p>
 <p align="center">
-    <br><b>Kaal Music Bot is a telegram bot project that's allow you to play music on telegram voice chat group</b><br>
+    <br><b>YT Music Bot is a telegram bot project that's allow you to play music on telegram voice chat group</b><br>
 </p>
 <p align="center">
     <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-round&logo=python&logoColor=black&color=white" /></a>
@@ -42,7 +42,7 @@
 
 # ʜᴇʀᴋᴜ ᴅᴇᴘʟᴏʏ
 </h3>
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/royalboycoder/Kaal-Music"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/royalboycoder/YT-Music-Repo"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 
 ## ᴅᴇᴘʟᴏʏ ᴏɴ ᴠᴘꜱ ꜱᴇʀᴠᴇʀ 📡
@@ -54,8 +54,8 @@ pip3 install -U pip
 curl -fssL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 npm i -g npm
-git clone https://github.com/royalboycoder/Kaal-Music # Clone your repo.
-cd Kaal-Music
+git clone https://github.com/royalboycoder/YT-Music-Reop# Clone your repo.
+cd YT-Music-Repo
 pip3 install --no-cache-dir --upgrade --requirement requirements.txt
 cp example.env .env #Use vim to edit ENVs
 vim .env #Fill up your ENVs ( Steps press i to enter in insert mode then edit the file. Press Esc to exit the editing mode then type :wq! and press Enter key to save the file.)
