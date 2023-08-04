@@ -23,7 +23,7 @@ def testspeed(m):
     return result
 
 
-@Royalboyamit.on_message(filters.command("sp") & filters.user(OWNER_ID))
+@Royalboyamit.on_message(command("sp"))
 @sudo_users_only
 async def speedtest_function(Royalboyamit: Royalboyamit, message: Message):
     m = await message.reply_text("❤")
