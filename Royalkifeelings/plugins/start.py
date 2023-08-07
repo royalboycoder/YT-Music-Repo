@@ -30,7 +30,7 @@ async def _human_time_duration(seconds):
 @Royalboyamit.on_message(filters.command(["start", "help"]) & ~filters.group)
 async def start(_, message: Message):
     await message.reply_photo(
-        photo=f"https://graph.org/file/f26f1b65bd824a87909a0.jpg",
+        photo=f"https://telegra.ph/file/ec42324c4b0f6d53a428e.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 🥀 𝐇𝐞𝐥𝐥𝐨, 𝐈 𝐀𝐦 𝐀𝐧 📀 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐀𝐧𝐝
 𝐒𝐮𝐩𝐞𝐫𝐟𝐚𝐬𝐭 𝐕𝐂 𝐏𝐥𝐚𝐲𝐞𝐫 » 𝐅𝐨𝐫 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
@@ -40,19 +40,19 @@ async def start(_, message: Message):
 𝐆𝐫𝐨𝐮𝐩 🌺 𝐀𝐧𝐝 𝐄𝐧𝐣𝐨𝐲 🌿 𝐒𝐮𝐩𝐞𝐫 𝐇𝐢𝐠𝐡
 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 🥀 ...
 ┏━━━━━━━━━━━━━━━━━┓
-┣★ 𝐂ʀᴇᴀᴛᴏʀ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royal_boy_amit)
-┣★ 𝐔ᴘᴅᴀᴛᴇ𝐒 : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royalkifeelings_12)
-┣★ 𝐒ᴜᴘᴘᴏʀᴛ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royalkifeelings)
+┣★ 𝐂ʀᴇᴀᴛᴏʀ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/ltzz_me_innocent)
+┣★ 𝐔ᴘᴅᴀᴛᴇ𝐒 : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/khamoshiya01)
+┣★ 𝐒ᴜᴘᴘᴏʀᴛ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/friendship_forever_group143)
 ┗━━━━━━━━━━━━━━━━━┛
 
 💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇ𝐒ᴛɪᴏɴ𝐒 ᴛʜᴇɴ
-ᴅᴍ ᴛᴏ ᴍʏ [𝐋ᴇɢᴇɴᴅ 𝐎ᴡɴᴇʀ](https://t.me/royal_boy_amit) ...
+ᴅᴍ ᴛᴏ ᴍʏ [𝐋ᴇɢᴇɴᴅ 𝐎ᴡɴᴇʀ](https://t.me/ltzz_me_innocent) ...
 ━━━━━━━━━━━━━━━━━━━━━━━━**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/royalkifeelings")
+                        "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/friendship_forever_group143")
                 ]
                 
            ]
