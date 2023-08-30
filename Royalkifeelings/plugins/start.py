@@ -34,25 +34,25 @@ async def start(_, message: Message):
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 🥀 𝐇𝐞𝐥𝐥𝐨, 𝐈 𝐀𝐦 𝐀𝐧 📀 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐀𝐧𝐝
 𝐒𝐮𝐩𝐞𝐫𝐟𝐚𝐬𝐭 𝐕𝐂 𝐏𝐥𝐚𝐲𝐞𝐫 » 𝐅𝐨𝐫 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
-𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐀𝐧𝐝 𝐆𝐫𝐨𝐮𝐩𝐬 ✨ ...
+𝐂𝐡𝐚𝐧𝐧𝐞𝐥✨ ...
 
 💐 𝐅𝐞𝐞𝐥 𝐅𝐫𝐞𝐞 𝐓𝐨: 🕊️ 𝐀𝐝𝐝 𝐌𝐞 𝐢𝐧 𝐘𝐨𝐮𝐫
 𝐆𝐫𝐨𝐮𝐩 🌺 𝐀𝐧𝐝 𝐄𝐧𝐣𝐨𝐲 🌿 𝐒𝐮𝐩𝐞𝐫 𝐇𝐢𝐠𝐡
-𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 🥀 ...
+𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐀𝐮𝐝𝐢𝐨🥀 ...
 ┏━━━━━━━━━━━━━━━━━┓
-┣★ 𝐂ʀᴇᴀᴛᴏʀ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royal_boy_amit)
-┣★ 𝐔ᴘᴅᴀᴛᴇ𝐒 : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royalkifeelings_12)
-┣★ 𝐒ᴜᴘᴘᴏʀᴛ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/royalkifeelings)
+┣★ 𝐂ʀᴇᴀᴛᴏʀ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/Monu_Gupta_01)
+┣★ 𝐔ᴘᴅᴀᴛᴇ𝐒 : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/About_Info_Devil)
+┣★ 𝐒ᴜᴘᴘᴏʀᴛ : [𝐂ʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/mission_successs)
 ┗━━━━━━━━━━━━━━━━━┛
 
 💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇ𝐒ᴛɪᴏɴ𝐒 ᴛʜᴇɴ
-ᴅᴍ ᴛᴏ ᴍʏ [𝐋ᴇɢᴇɴᴅ 𝐎ᴡɴᴇʀ](https://t.me/royal_boy_amit) ...
+ᴅᴍ ᴛᴏ ᴍʏ [𝐋ᴇɢᴇɴᴅ 𝐎ᴡɴᴇʀ](https://t.me/Monu_Gupta_01) ...
 ━━━━━━━━━━━━━━━━━━━━━━━━**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/royalkifeelings")
+                        "✯ 𝐉ᴏɪɴ 𝐌ʏ 𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ ✯", url=f"https://t.me/mission_successs")
                 ]
                 
            ]
