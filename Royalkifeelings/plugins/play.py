@@ -68,48 +68,42 @@ async def play(c: Royalboyamit, m: Message):
     user_id = m.from_user.id
     buttons = audio_markup(user_id)
     
-    if m.sender_chat:
-        return await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
+    # Check if the sender is a sender chat (i.e., a bot message in the chat)
+if m.sender_chat:
+    return await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
     
-    # Get the chat member object
-    a = await c.get_chat_member(chat_id, user_id)
+# Get the chat member object for the user who sent the message
+a = await c.get_chat_member(chat_id, user_id)
+
+# Check if the user is an administrator
+if a.status != ChatMemberStatus.ADMINISTRATOR:
+    return await m.reply_text(
+        f"**💡 ᴛᴏ ᴜsᴇ ᴍᴇ, ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ **ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ** ᴡɪᴛʜ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ **ᴘᴇʀᴍɪssɪᴏɴs**:\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__\n\nᴅᴀᴛᴀ ɪs **ᴜᴘᴅᴀᴛᴇᴅ** ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀғᴛᴇʀ ʏᴏᴜ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ**"
+    )
+
+# Check for specific permissions for administrators using the `permissions` attribute
+if not a.permissions.can_manage_voice_chats:
+    return await m.reply_text(
+        "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__"
+    )
+
+# Check for other permissions for the administrator
+if not a.permissions.can_delete_messages:
+    return await m.reply_text(
+        "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__**"
+    )
+
+if not a.permissions.can_invite_users:
+    return await m.reply_text(
+        "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**"
+    )
+
     
-    # Check if the attribute exists
-    if not a.can_manage_voice_chats:
-        return await m.reply_text("You do not have permission to manage voice chats.")
-    
-    try:
-        aing = await c.get_me()
-    except Exception as e:
-        return await m.reply_text(f"Error:\n\n{e}")
-    
-    a = await c.get_chat_member(chat_id, aing.id)
-    if a.status != ChatMemberStatus.ADMINISTRATOR:
-        await m.reply_text(
-            f"**💡 ᴛᴏ ᴜsᴇ ᴍᴇ, ɪ ɴᴇᴇᴅ ᴛᴏ   ʙᴇ ᴀɴ **ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ** ᴡɪᴛʜ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ **ᴘᴇʀᴍɪssɪᴏɴs**:\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__\n\nᴅᴀᴛᴀ ɪs **ᴜᴘᴅᴀᴛᴇᴅ** ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀғᴛᴇʀ ʏᴏᴜ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ**"
-        )
-        return
-    
-    if not a.can_manage_voice_chats:
-        await m.reply_text(
-            "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__"
-        )
-        return
-    
-    if not a.can_delete_messages:
-        await m.reply_text(
-            "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__**"
-        )
-        return
-    
-    if not a.can_invite_users:
-        await m.reply_text("**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**")
-        return
     
     try:
         ubot = (await user.get_me()).id
         b = await c.get_chat_member(chat_id, ubot)
-        if b.status == "kicked":
+        if b.status == ChatMemberStatus.BANNED:
             await m.reply_text(
                 f"@{BOT_USERNAME} **ɪs ʙᴀɴɴᴇᴅ ɪɴ ɢʀᴏᴜᴘ** {m.chat.title}\n\n» **ᴜɴʙᴀɴ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ғɪʀsᴛ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.**"
             )
