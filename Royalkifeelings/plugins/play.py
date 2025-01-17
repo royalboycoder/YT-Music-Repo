@@ -3,7 +3,7 @@ import glob
 import random
 import logging
 from typing import Union
-
+import asyncio
 import yt_dlp
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
@@ -70,7 +70,7 @@ async def play(c: Royalboyamit, m: Message):
     
 # Check if the sender is a sender chat (i.e., a bot message in the chat)
 if m.sender_chat:
-     await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
+    await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
     
 # Get the chat member object for the user who sent the message
 a = await c.get_chat_member(chat_id, user_id)
