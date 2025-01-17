@@ -2,7 +2,7 @@ aiofiles
 aiohttp
 asyncio
 dnspython
-numpy==1.24.3
+numpy
 ffmpeg-python
 gitpython
 hachoir
@@ -13,7 +13,7 @@ pillow
 psutil
 py-tgcalls==0.9.7
 pykeyboard
-pyrogram==2.0.106
+kurigram==2.1.35
 python-dotenv
 pyyaml
 requests
