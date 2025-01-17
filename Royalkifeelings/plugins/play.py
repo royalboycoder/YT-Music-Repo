@@ -7,7 +7,7 @@ from typing import Union
 import yt_dlp
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ChatMemberUpdated
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio
@@ -70,8 +70,16 @@ async def play(c: Royalboyamit, m: Message):
     chat_id = m.chat.id
     user_id = m.from_user.id
     buttons = audio_markup(user_id)
+    
     if m.sender_chat:
         return await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
+    
+    # Get the chat member object
+    a = await c.get_chat_member(chat_id, user_id)
+    
+    # Check if the attribute exists
+    if hasattr(a, 'can_manage_voice_chats') and not a.can_manage_voice_chats:
+        return await m.reply_text("You do not have permission to manage voice chats.")
     try:
         aing = await c.get_me()
     except Exception as e:
