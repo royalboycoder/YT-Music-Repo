@@ -64,7 +64,7 @@ ACTV_CALLS = []
 
     
 @Royalboyamit.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
-async def play(c: Royalboyamit, m: Message):
+async def play(c: Royalboyamit, m: ChatMemberUpdated):
     await m.delete()
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -78,7 +78,7 @@ async def play(c: Royalboyamit, m: Message):
     a = await c.get_chat_member(chat_id, user_id)
     
     # Check if the attribute exists
-    if hasattr(a, 'can_manage_voice_chats') and not a.can_manage_voice_chats:
+    if hasattr(a, 'can_manage_voice_chats') and not m.can_manage_voice_chats:
         return await m.reply_text("You do not have permission to manage voice chats.")
     try:
         aing = await c.get_me()
