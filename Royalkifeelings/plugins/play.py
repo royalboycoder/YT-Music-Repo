@@ -68,37 +68,35 @@ async def play(c: Royalboyamit, m: Message):
     user_id = m.from_user.id
     buttons = audio_markup(user_id)
     
-    # Check if the sender is a sender chat (i.e., a bot message in the chat)
+# Check if the sender is a sender chat (i.e., a bot message in the chat)
 if m.sender_chat:
-    return await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
+     await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
     
 # Get the chat member object for the user who sent the message
 a = await c.get_chat_member(chat_id, user_id)
 
 # Check if the user is an administrator
 if a.status != ChatMemberStatus.ADMINISTRATOR:
-    return await m.reply_text(
+     await m.reply_text(
         f"**💡 ᴛᴏ ᴜsᴇ ᴍᴇ, ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ **ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ** ᴡɪᴛʜ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ **ᴘᴇʀᴍɪssɪᴏɴs**:\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__\n\nᴅᴀᴛᴀ ɪs **ᴜᴘᴅᴀᴛᴇᴅ** ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀғᴛᴇʀ ʏᴏᴜ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ**"
     )
 
 # Check for specific permissions for administrators using the `permissions` attribute
 if not a.permissions.can_manage_voice_chats:
-    return await m.reply_text(
+     await m.reply_text(
         "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__"
     )
 
 # Check for other permissions for the administrator
 if not a.permissions.can_delete_messages:
-    return await m.reply_text(
+     await m.reply_text(
         "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__**"
     )
 
 if not a.permissions.can_invite_users:
-    return await m.reply_text(
+     await m.reply_text(
         "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**"
     )
-
-    
     
     try:
         ubot = (await user.get_me()).id
