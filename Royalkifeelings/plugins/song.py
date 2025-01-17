@@ -281,7 +281,7 @@ async def vsong(Royalboyamit, message):
         return await msg.edit(f"🚫 **error:** {e}")
     preview = wget.download(thumbnail)
     await msg.edit("📤 **uploading video...**")
-    await message.reply_video(
+    await message.reply_audio(
         file_name,
         duration=int(ytdl_data["duration"]),
         thumb=preview,
