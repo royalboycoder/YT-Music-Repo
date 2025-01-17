@@ -34,7 +34,7 @@ ydl_opts = {
 }
 
 
-@Royalboyamit.on_message(command(["song", f"song@{bn}"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["song", f"song@{bn}"]))
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("🔎 finding song...")
@@ -220,7 +220,7 @@ def time_to_seconds(times):
 
 
 @Royalboyamit.on_message(
-    command(["vsong", f"vsong@{bn}", "video", f"video@{bn}"]) & ~filters.edited
+    command(["vsong", f"vsong@{bn}", "video", f"video@{bn}"])
 )
 async def vsong(Royalboyamit, message):
     ydl_opts = {
