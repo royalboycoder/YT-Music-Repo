@@ -23,7 +23,7 @@ user = PyTgCalls(
     overload_quiet_mode=True,
 )
 
-call_py = PyTgCalls(Royalboyamit, overload_quiet_mode=True)
+call_py = PyTgCalls(Royalboyamit)
 
 OWNER_NAME = "Royal_boy_amit"
 F_OWNER = OWNER_ID[0]
