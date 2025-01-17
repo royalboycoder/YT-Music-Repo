@@ -1,5 +1,6 @@
 from typing import Dict, List
 
+from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import Chat
 
 admins: Dict[int, List[int]] = {}
@@ -21,7 +22,7 @@ async def get_administrators(chat: Chat) -> List[int]:
     if get:
         return get
     else:
-        administrators = await chat.get_members(filter="administrators")
+        administrators = await chat.get_members(filter=ChatMembersFilter.ADMINISTRATORS)
         to_set = []
 
         for administrator in administrators:
