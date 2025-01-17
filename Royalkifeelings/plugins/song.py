@@ -1,5 +1,14 @@
 from __future__ import unicode_literals
-
+from youtubesearchpython.__future__ import VideosSearch
+from typing import Union
+import json
+import yt_dlp
+import re
+import asyncio
+import os
+import glob
+import random
+import logging
 import asyncio
 import math
 import os
@@ -24,10 +33,23 @@ from Royalkifeelings.helper.decorators import humanbytes
 from Royalkifeelings.helper.filters import command, other_filters
 
 
+def cookie_txt_file():
+    folder_path = f"{os.getcwd()}/cookies"
+    filename = f"{os.getcwd()}/cookies/logs.csv"
+    txt_files = glob.glob(os.path.join(folder_path, '*.txt'))
+    if not txt_files:
+        raise FileNotFoundError("No .txt files found in the specified folder.")
+    cookie_txt_file = random.choice(txt_files)
+    with open(filename, 'a') as file:
+        file.write(f'Choosen File : {cookie_txt_file}\n')
+    return f"""cookies/{str(cookie_txt_file).split("/")[-1]}"""
+
+
 ydl_opts = {
     'format': 'best',
     'keepvideo': True,
     'prefer_ffmpeg': False,
+    '--cookies', cookie_txt_file(),
     'geo_bypass': True,
     'outtmpl': '%(title)s.%(ext)s',
     'quite': True
