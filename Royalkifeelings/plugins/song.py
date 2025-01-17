@@ -69,7 +69,10 @@ def song(_, message):
         thumb_name = f"{title}.jpg"
         thumb = requests.get(thumbnail, allow_redirects=True)
         open(thumb_name, "wb").write(thumb.content)
-        duration = results[0]["duration"]
+        results[0]["duration"]
+        results[0]["url_suffix"]
+        results[0]["views"]
+        message.from_user.mention
 
     except Exception as e:
         m.edit("❌ song not found.\n\nplease give a valid song name.")
