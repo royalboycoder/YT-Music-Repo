@@ -112,7 +112,7 @@ async def vplay(c: Royalboyamit, m: Message):
     try:
         ubot = (await user.get_me()).id
         b = await c.get_chat_member(chat_id, ubot) 
-        if b.status == "kicked":
+        if b.status == ChatMemberStatus.BANNED:
             await c.unban_chat_member(chat_id, ubot)
             invitelink = await c.export_chat_invite_link(chat_id)
             if invitelink.startswith("https://t.me/+"):
