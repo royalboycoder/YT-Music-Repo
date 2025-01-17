@@ -16,7 +16,7 @@ from Royalkifeelings.helper.queues import QUEUE, add_to_queue
 from Royalkifeelings import call_py, Royalboyamit as user
 from Royalkifeelings import bot as Royalboyamit
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ChatMemberUpdated
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
@@ -77,7 +77,7 @@ async def ytdl(link):
 
 
 @Royalboyamit.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & other_filters)
-async def vplay(c: Royalboyamit, m: Message):
+async def vplay(c: Royalboyamit, m: ChatMemberUpdated):
     await m.delete()
     replied = m.reply_to_message
     chat_id = m.chat.id
