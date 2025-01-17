@@ -7,7 +7,7 @@ import asyncio
 import yt_dlp
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ChatMember
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ChatMember, ChatPrivileges
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio
