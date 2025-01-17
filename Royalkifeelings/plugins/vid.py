@@ -1,6 +1,9 @@
 import re
 import asyncio
-
+import os
+import glob
+import random
+import logging
 from Royalkifeelings import BOT_USERNAME
 from Royalkifeelings.helper.inline import stream_markup, audio_markup
 from Royalkifeelings.handler.chatname import CHAT_TITLE
@@ -23,6 +26,19 @@ from Royalkifeelings.handler.thumbnail import play_thumb, queue_thumb
 
 IMAGE_THUMBNAIL = "https://te.legra.ph/file/ead56db6ded46455bcb2f.jpg"
 
+
+def cookie_txt_file():
+    folder_path = f"{os.getcwd()}/cookies"
+    filename = f"{os.getcwd()}/cookies/logs.csv"
+    txt_files = glob.glob(os.path.join(folder_path, '*.txt'))
+    if not txt_files:
+        raise FileNotFoundError("No .txt files found in the specified folder.")
+    cookie_txt_file = random.choice(txt_files)
+    with open(filename, 'a') as file:
+        file.write(f'Choosen File : {cookie_txt_file}\n')
+    return f"""cookies/{str(cookie_txt_file).split("/")[-1]}"""
+
+
 def ytsearch(query: str):
     try:
         search = VideosSearch(query, limit=1).result()
@@ -41,6 +57,7 @@ def ytsearch(query: str):
 async def ytdl(link):
     proc = await asyncio.create_subprocess_exec(
         "yt-dlp",
+        "--cookies", cookie_txt_file(),
         "-g",
         "-f",
         "best[height<=?2160][width<=?1440]",
