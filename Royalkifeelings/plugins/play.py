@@ -144,7 +144,7 @@ async def play(c: Royalboyamit, m: Message):
                 )
     if replied:
         if replied.audio or replied.voice:
-            pokemon = await replied.reply("💘")
+            Royalboyamit = await replied.reply("💘")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -159,7 +159,7 @@ async def play(c: Royalboyamit, m: Message):
                 songname = "Voice Note"
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-                await pokemon.delete()
+                await Royalboyamit.delete()
                 await m.reply_photo(
                     photo=playimg,
                     caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ơɯ ❤️ Ʌɗɗəɗ Søŋʛ 💫\n\n**ƦɛqʉʂƮɜɖ Ɓɤ :{m.from_user.mention()}",
@@ -176,7 +176,7 @@ async def play(c: Royalboyamit, m: Message):
                     stream_type=StreamType().local_stream,
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-                await pokemon.delete()
+                await Royalboyamit.delete()
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
                     photo=playimg,
@@ -184,7 +184,7 @@ async def play(c: Royalboyamit, m: Message):
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
              except Exception as e:
-                await pokemon.delete()
+                await Royalbotamit.delete()
                 await m.reply_text(f"🚫 error:\n\n» {e}")
         
     else:
@@ -194,7 +194,7 @@ async def play(c: Royalboyamit, m: Message):
                     caption=f"**𝐔𝐬ᴀɢᴇ: /play 🤖 𝐆𝐢𝐯𝐞 🙃 𝐒𝐨𝐦𝐞 💿 𝐐𝐮𝐞𝐫𝐲 😍 𝐓𝐨 🔊 𝐏𝐥𝐚𝐲 🥀 𝐒𝐨𝐧𝐠 🌷...**"),
         
         else:
-            pokemon = await m.reply_text(
+            Royalboyamit = await m.reply_text(
         f"**Şєʌɾƈɦɪɲʛ ຖơɯ...**"
     )
             query = m.text.split(None, 1)[1]
@@ -211,7 +211,7 @@ async def play(c: Royalboyamit, m: Message):
                 gcname = m.chat.title
                 videoid = search[4]
                 dlurl = f"https://www.youtubepp.com/watch?v={videoid}"
-                info = f"https://t.me/elsaa_Ro_bot?start=info_{videoid}"
+                info = f"https://t.me/GrooveXrobot?start=info_{videoid}"
                 keyboard = stream_markup(user_id, dlurl)
                 playimg = await play_thumb(videoid)
                 queueimg = await queue_thumb(videoid)
