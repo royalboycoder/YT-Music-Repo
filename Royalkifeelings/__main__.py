@@ -2,7 +2,7 @@ import asyncio
 import importlib
 from pytgcalls import idle
 from Royalkifeelings.callmusic.config import BOT_USERNAME
-from Royalkifeelings import bot, call_py
+from Royalkifeelings import bot, call_py, Royalboyamit
 from Royalkifeelings.plugins import ALL_PLUGINS
 
 
@@ -13,6 +13,7 @@ async def Royalkifeelings_boot():
     for all_module in ALL_PLUGINS:
         importlib.import_module("Royalkifeelings.plugins." + all_module)
     await bot.start()
+    await Royalboyamit.start()
     await call_py.start()
     await idle()
     print(f"ɢᴏᴏᴅʙʏᴇ!\nStopping @{BOT_USERNAME}")
