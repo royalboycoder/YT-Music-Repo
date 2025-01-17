@@ -8,7 +8,7 @@ from Royalkifeelings.helper.decorators import sudo_users_only, errors
 downloads = os.path.realpath("callmusic/downloads")
 raw = os.path.realpath(".")
 
-@Royalboyamit.on_message(command(["rmd", "clear"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["rmd", "clear"]))
 @errors
 @sudo_users_only
 async def clear_downloads(_, message: Message):
@@ -21,7 +21,7 @@ async def clear_downloads(_, message: Message):
         await message.reply_text("❌ **NO FILES DOWNLOADED**")
 
         
-@Royalboyamit.on_message(command(["rmw", "clean"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["rmw", "clean"]))
 @errors
 @sudo_users_only
 async def clear_raw(_, message: Message):
@@ -35,7 +35,7 @@ async def clear_raw(_, message: Message):
         await message.reply_text("❌ **NO RAW FILES FOUND**")
 
 
-@Royalboyamit.on_message(command(["cleanup"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["cleanup"]))
 @errors
 @sudo_users_only
 async def cleanup(_, message: Message):
