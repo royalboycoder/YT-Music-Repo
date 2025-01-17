@@ -5,8 +5,8 @@ from Royalkifeelings.plugins import ALL_PLUGINS
 
 bot = Client(
     name="Royalkifeelings",
-    API_ID,
-    API_HASH,
+    api_id=API_ID,
+    api_hash=API_HASH,
     bot_token=BOT_TOKEN,
 )
 
