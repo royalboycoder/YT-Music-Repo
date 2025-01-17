@@ -15,7 +15,7 @@ import os
 import time
 from random import randint
 from urllib.parse import urlparse
-
+from pyrogram import enums
 import aiofiles
 import aiohttp
 import requests
@@ -94,7 +94,7 @@ def song(_, message):
             audio_file,
             caption=rep,
             thumb=thumb_name,
-            parse_mode="md",
+            parse_mode=enums.ParseMode.MARKDOWN,
             title=title,
             duration=dur,
         )
