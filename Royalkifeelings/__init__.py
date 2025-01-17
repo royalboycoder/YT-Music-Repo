@@ -19,8 +19,7 @@ Royalboyamit = Client(
 
 user = PyTgCalls(
     Royalboyamit,
-    cache_duration=100,
-    overload_quiet_mode=True,
+    cache_duration=100
 )
 
 call_py = PyTgCalls(Royalboyamit)
