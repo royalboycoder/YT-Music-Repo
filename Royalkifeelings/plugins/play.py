@@ -94,8 +94,8 @@ if not a.permissions.can_delete_messages:
     )
 
 if not a.permissions.can_invite_users:
-     await m.reply_text(
-        "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**"
+    await m.reply_text(
+        "**ᴍɪssɪɴɢ ʀᴇǫᴜɪɴᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**"
     )
     
     try:
@@ -113,6 +113,7 @@ if not a.permissions.can_invite_users:
             except Exception as e:
                 await m.reply_text(f"❌ **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`")
                 return
+
         else:
             try:
                 invitelink = await c.export_chat_invite_link(
