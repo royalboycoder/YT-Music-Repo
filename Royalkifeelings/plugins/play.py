@@ -23,6 +23,7 @@ from Royalkifeelings import Royalboyamit as user
 from Royalkifeelings import bot as Royalboyamit
 from Royalkifeelings import call_py
 
+
 def cookie_txt_file():
     folder_path = f"{os.getcwd()}/cookies"
     filename = f"{os.getcwd()}/cookies/logs.csv"
@@ -33,6 +34,7 @@ def cookie_txt_file():
     with open(filename, 'a') as file:
         file.write(f'Choosen File : {cookie_txt_file}\n')
     return f"""cookies/{str(cookie_txt_file).split("/")[-1]}"""
+
 
 def ytsearch(query):
     try:
@@ -48,8 +50,9 @@ def ytsearch(query):
         print(e)
         return 0
 
+
 async def ytdl(format: str, link: str):
-    stdout, stderr = await bash(f'yt-dlp --geo-bypass --cookies {cookie_txt_file()} -g -f "[height<=?2160][width<=?1280]" {link}')
+    stdout, stderr = await bash(f'yt-dlp --cookies {cookie_txt_file()} --geo-bypass -g -f "[height<=?2160][width<=?1280]" {link}')
     if stdout:
         return 1, stdout.split("\n")[0]
     return 0, stderr
@@ -59,82 +62,54 @@ DISABLED_GROUPS = []
 useer = "NaN"
 ACTV_CALLS = []
 
-
+    
 @Royalboyamit.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
-async def play(c: Client, m: Message):
+async def play(c: Royalboyamit, m: Message):
     await m.delete()
     replied = m.reply_to_message
     chat_id = m.chat.id
     user_id = m.from_user.id
     buttons = audio_markup(user_id)
-
-    # Check if the sender is a sender chat (i.e., a bot message in the chat)
     if m.sender_chat:
-        await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
-        return
-    
+        return await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
     try:
-        # Get the chat member object for the user who sent the message
-        a = await c.get_chat_member(chat_id, user_id)
-
-        # Check if the result is a valid chat member (it should be)
-        if isinstance(a, ChatMember):
-            # Check if the user is an administrator
-            if a.status != ChatMemberStatus.ADMINISTRATOR:
-                await m.reply_text(
-                    f"**💡 ᴛᴏ ᴜsᴇ ᴍᴇ, ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ **ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ** ᴡɪᴛʜ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ **ᴘᴇʀᴍɪssɪᴏɴs**:\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__\n\nᴅᴀᴛᴀ ɪs **ᴜᴘᴅᴀᴛᴇᴅ** ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀғᴛᴇʀ ʏᴏᴜ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ**"
-                )
-                return
-
-            # Check permissions for the administrator
-            if not a.permissions or not a.permissions.can_manage_voice_chats:
-                await m.reply_text(
-                    "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__"
-                )
-                return
-
-            if not a.permissions.can_delete_messages:
-                await m.reply_text(
-                    "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__**"
-                )
-                return
-
-            if not a.permissions.can_invite_users:
-                await m.reply_text(
-                    "**ᴍɪssɪɴɢ ʀᴇǫᴜɪɴᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**"
-                )
-                return
-        else:
-            await m.reply_text("**ᴀɴ ᴇʀʳᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ᴇxᴇᴄᴜᴛɪɴɢ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.**")
-            return
+        aing = await c.get_me()
     except Exception as e:
-        await m.reply_text(f"**Error:** {str(e)}")
-
-    # Check if the bot is banned in the group
+        return await m.reply_text(f"Error:\n\n{e}")
+    a = await c.get_chat_member(chat_id, aing.id)
+    if a.status != ChatMemberStatus.ADMINISTRATOR:
+        await m.reply_text(
+            f"**💡 ᴛᴏ ᴜsᴇ ᴍᴇ, ɪ ɴᴇᴇᴅ ᴛᴏ   ʙᴇ ᴀɴ **ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ** ᴡɪᴛʜ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ **ᴘᴇʀᴍɪssɪᴏɴs**:\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__\n\nᴅᴀᴛᴀ ɪs **ᴜᴘᴅᴀᴛᴇᴅ** ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀғᴛᴇʀ ʏᴏᴜ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ**"
+        )
+        return
+    if not a.can_manage_voice_chats:
+        await m.reply_text(
+            "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__"
+        )
+        return
+    if not a.can_delete_messages:
+        await m.reply_text(
+            "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__**"
+        )
+        return
+    if not a.can_invite_users:
+        await m.reply_text("**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**")
+        return
     try:
-        ubot = (await c.get_me()).id
+        ubot = (await user.get_me()).id
         b = await c.get_chat_member(chat_id, ubot)
-        if b.status == ChatMemberStatus.BANNED:
+        if b.status == "kicked":
             await m.reply_text(
-                f"@{BOT_USERNAME} **ɪs ʙᴀɴɴᴇᴅ ɪɴ ɢʀᴏᴜᴘ** {m.chat.title}\n\n» **ᴜɴʙᴀɴ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ғɪʀsᴛ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴇsᴇ ᴛʜɪs ʙᴏᴛ.**"
+                f"@{ASSISTANT_NAME} **ɪs ʙᴀɴɴᴇᴅ ɪɴ ɢʀᴏᴜᴘ** {m.chat.title}\n\n» **ᴜɴʙᴀɴ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ғɪʀsᴛ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.**"
             )
             return
-    except Exception as e:
-        await m.reply_text(f"**Error:** {str(e)}")
-
-    # Join chat if the bot is not a participant
-    try:
-        if not await c.get_chat_member(chat_id, ubot):
-            if m.chat.username:
-                try:
-                    await c.join_chat(m.chat.username)
-                except Exception as e:
-                    await m.reply_text(f"❌ **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`")
-                    return
-    except Exception as e:
-        await m.reply_text(f"**Error:** {str(e)}")
-
-
+    except UserNotParticipant:
+        if m.chat.username:
+            try:
+                await user.join_chat(m.chat.username)
+            except Exception as e:
+                await m.reply_text(f"❌ **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`")
+                return
         else:
             try:
                 invitelink = await c.export_chat_invite_link(
@@ -151,17 +126,21 @@ async def play(c: Client, m: Message):
                 return await m.reply_text(
                     f"❌ **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`"
                 )
-    
     if replied:
         if replied.audio or replied.voice:
             pokemon = await replied.reply("💘")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
-                songname = replied.audio.title or replied.audio.file_name or "Audio"
+                if replied.audio.title:
+                    songname = replied.audio.title[:70]
+                else: 
+                    if replied.audio.file_name:
+                        songname = replied.audio.file_name[:70]
+                    else:
+                        songname = "Audio"
             elif replied.voice:
                 songname = "Voice Note"
-            
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await pokemon.delete()
@@ -171,41 +150,41 @@ async def play(c: Client, m: Message):
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
             else:
-                try:
-                    await call_py.join_group_call(
-                        chat_id,
-                        AudioPiped(
-                            dl,
-                            HighQualityAudio(),
-                        ),
-                        stream_type=StreamType().local_stream,
-                    )
-                    add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-                    await pokemon.delete()
-                    requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
-                    await m.reply_photo(
-                        photo=playimg,
-                        caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ🤟\n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}**",
-                        reply_markup=InlineKeyboardMarkup(buttons),
-                    )
-                except Exception as e:
-                    await pokemon.delete()
-                    await m.reply_text(f"🚫 error:\n\n» {e}")
+             try:
+                await call_py.join_group_call(
+                    chat_id,
+                    AudioPiped(
+                        dl,
+                        HighQualityAudio(),
+                    ),
+                    stream_type=StreamType().local_stream,
+                )
+                add_to_queue(chat_id, songname, dl, link, "Audio", 0)
+                await pokemon.delete()
+                requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
+                await m.reply_photo(
+                    photo=playimg,
+                    caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ 😄 ℘ɭʌɤɪɴʛ 📀 Ʌʈ🤟\n\nƦɛqʉʂƮɜɖ Ɓɤ :{requester}**",
+                    reply_markup=InlineKeyboardMarkup(buttons),
+                )
+             except Exception as e:
+                await pokemon.delete()
+                await m.reply_text(f"🚫 error:\n\n» {e}")
         
     else:
         if len(m.command) < 2:
-            await m.reply_photo(
-                photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg", 
-                caption=f"**𝐔𝐬ᴀɢᴇ: /play 🤖 𝐆𝐢𝐯𝐞 🙃 𝐒𝐨𝐦𝐞 💿 𝐐𝐮𝐞𝐫𝐲 😍 𝐓𝐨 🔊 𝐏𝐥𝐚𝐲 🥀 𝐒𝐨𝐧𝐠 🌷...**")
+         await m.reply_photo(
+                    photo=f"https://graph.org/file/b54b89d9d4f7efe4fbd75.jpg", 
+                    caption=f"**𝐔𝐬ᴀɢᴇ: /play 🤖 𝐆𝐢𝐯𝐞 🙃 𝐒𝐨𝐦𝐞 💿 𝐐𝐮𝐞𝐫𝐲 😍 𝐓𝐨 🔊 𝐏𝐥𝐚𝐲 🥀 𝐒𝐨𝐧𝐠 🌷...**"),
         
         else:
             pokemon = await m.reply_text(
-                f"**Şєʌɾƃɕɦɪɲʛ ຖơɯ...**"
-            )
+        f"**Şєʌɾƈɦɪɲʛ ຖơɯ...**"
+    )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await pokemon.edit("**🌸 Søɴʛ Ɲøʈ Fɵʉŋɖ 😅 Spɘɭɭɪɴɢ Ƥʀøɓɭəɱ**")
+                await pokemon.edit("**🌸 Søɴʛ Ɲøʈ Fɵʉŋɖ 😅 Spɘɭɭɪŋɢ Ƥʀøɓɭəɱ**")
             else:
                 songname = search[0]
                 title = search[0]
@@ -228,7 +207,9 @@ async def play(c: Client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await pokemon.delete()
-                        requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
+                        requester = (
+                            f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
+                        )
                         await m.reply_photo(
                             photo=playimg,
                             caption=f"**✰ ϔƭ Ɱϋƨɪƈ Ρɭʌϔɪɲʛ ₦ø̛ɯ ❤️ Ʌɗɗəɗ Søŋʛ 💫🤟\n** :{requester}",
@@ -237,8 +218,8 @@ async def play(c: Client, m: Message):
                     else:
                         try:
                             await pokemon.edit(
-                                f"**Ƥɾơƈєƨƨɪɲʛ ຖơɯ...**"
-                            )
+                            f"**Ƥɾơƈєƨƨɪɲʛ ຖơɯ...**"
+                        )
                             await call_py.join_group_call(
                                 chat_id,
                                 AudioPiped(
