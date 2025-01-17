@@ -60,7 +60,6 @@ useer = "NaN"
 ACTV_CALLS = []
 
 
-
 @Royalboyamit.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
 async def play(c: Client, m: Message):
     await m.delete()
@@ -68,7 +67,7 @@ async def play(c: Client, m: Message):
     chat_id = m.chat.id
     user_id = m.from_user.id
     buttons = audio_markup(user_id)
-    
+
     # Check if the sender is a sender chat (i.e., a bot message in the chat)
     if m.sender_chat:
         await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
@@ -111,7 +110,7 @@ async def play(c: Client, m: Message):
     except Exception as e:
         await m.reply_text(f"**Error:** {str(e)}")
 
-    # If the bot is banned in the group
+    # Check if the bot is banned in the group
     try:
         ubot = (await c.get_me()).id
         b = await c.get_chat_member(chat_id, ubot)
@@ -134,7 +133,6 @@ async def play(c: Client, m: Message):
                     return
     except Exception as e:
         await m.reply_text(f"**Error:** {str(e)}")
-
 
 
         else:
