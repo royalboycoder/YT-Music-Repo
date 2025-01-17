@@ -49,7 +49,7 @@ ydl_opts = {
     'format': 'best',
     'keepvideo': True,
     'prefer_ffmpeg': False,
-    '--cookies', cookie_txt_file(),
+    '--cookies': cookie_txt_file(),
     'geo_bypass': True,
     'outtmpl': '%(title)s.%(ext)s',
     'quite': True
