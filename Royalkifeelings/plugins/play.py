@@ -7,7 +7,7 @@ import asyncio
 import yt_dlp
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ChatMemberUpdated
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ChatMember
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio
@@ -59,9 +59,10 @@ DISABLED_GROUPS = []
 useer = "NaN"
 ACTV_CALLS = []
 
-    
+
+
 @Royalboyamit.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
-async def play(c: Royalboyamit, m: Message):
+async def play(c: Client, m: Message):
     await m.delete()
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -71,48 +72,69 @@ async def play(c: Royalboyamit, m: Message):
     # Check if the sender is a sender chat (i.e., a bot message in the chat)
     if m.sender_chat:
         await m.reply_text("Bot 🤣 Na work Kare gaa ree 👀.")
+        return
     
-    # Get the chat member object for the user who sent the message
-    a = await c.get_chat_member(chat_id, user_id)
-
-    # Check if the user is an administrator
-    if a.status != ChatMemberStatus.ADMINISTRATOR:
-        await m.reply_text(
-            f"**💡 ᴛᴏ ᴜsᴇ ᴍᴇ, ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ **ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ** ᴡɪᴛʜ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ **ᴘᴇʀᴍɪssɪᴏɴs**:\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__\n\nᴅᴀᴛᴀ ɪs **ᴜᴘᴅᴀᴛᴇᴅ** ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀғᴛᴇʀ ʏᴏᴜ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ**"
-        )
-
-    # Check for specific permissions for administrators using the `permissions` attribute
-    if not a.permissions.can_manage_voice_chats:
-        await m.reply_text(
-            "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__"
-        )
-
-    # Check for other permissions for the administrator
-    if not a.permissions.can_delete_messages:
-        await m.reply_text(
-            "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__**"
-        )
-
-    if not a.permissions.can_invite_users:
-        await m.reply_text(
-            "**ᴍɪssɪɴɢ ʀᴇǫᴜɪɴᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**"
-        )
-
     try:
-        ubot = (await user.get_me()).id
+        # Get the chat member object for the user who sent the message
+        a = await c.get_chat_member(chat_id, user_id)
+
+        # Check if the result is a valid chat member (it should be)
+        if isinstance(a, ChatMember):
+            # Check if the user is an administrator
+            if a.status != ChatMemberStatus.ADMINISTRATOR:
+                await m.reply_text(
+                    f"**💡 ᴛᴏ ᴜsᴇ ᴍᴇ, ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ **ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ** ᴡɪᴛʜ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ **ᴘᴇʀᴍɪssɪᴏɴs**:\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__\n\nᴅᴀᴛᴀ ɪs **ᴜᴘᴅᴀᴛᴇᴅ** ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴀғᴛᴇʀ ʏᴏᴜ **ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ**"
+                )
+                return
+
+            # Check permissions for the administrator
+            if not a.permissions or not a.permissions.can_manage_voice_chats:
+                await m.reply_text(
+                    "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴍᴀɴᴀɢᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ__"
+                )
+                return
+
+            if not a.permissions.can_delete_messages:
+                await m.reply_text(
+                    "**ᴍɪssɪɴɢ ʀᴇǫᴜɪʀᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs__**"
+                )
+                return
+
+            if not a.permissions.can_invite_users:
+                await m.reply_text(
+                    "**ᴍɪssɪɴɢ ʀᴇǫᴜɪɴᴇᴅ ᴘᴇʀᴍɪssɪᴏɴ:" + "\n\n» ❌ __ᴀᴅᴅ ᴜsᴇʀs__**"
+                )
+                return
+        else:
+            await m.reply_text("**ᴀɴ ᴇʀʳᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ᴇxᴇᴄᴜᴛɪɴɢ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.**")
+            return
+    except Exception as e:
+        await m.reply_text(f"**Error:** {str(e)}")
+
+    # If the bot is banned in the group
+    try:
+        ubot = (await c.get_me()).id
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == ChatMemberStatus.BANNED:
             await m.reply_text(
                 f"@{BOT_USERNAME} **ɪs ʙᴀɴɴᴇᴅ ɪɴ ɢʀᴏᴜᴘ** {m.chat.title}\n\n» **ᴜɴʙᴀɴ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ғɪʀsᴛ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴇsᴇ ᴛʜɪs ʙᴏᴛ.**"
             )
             return
-    except UserNotParticipant:
-        if m.chat.username:
-            try:
-                await user.join_chat(m.chat.username)
-            except Exception as e:
-                await m.reply_text(f"❌ **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`")
-                return
+    except Exception as e:
+        await m.reply_text(f"**Error:** {str(e)}")
+
+    # Join chat if the bot is not a participant
+    try:
+        if not await c.get_chat_member(chat_id, ubot):
+            if m.chat.username:
+                try:
+                    await c.join_chat(m.chat.username)
+                except Exception as e:
+                    await m.reply_text(f"❌ **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`")
+                    return
+    except Exception as e:
+        await m.reply_text(f"**Error:** {str(e)}")
+
 
 
         else:
