@@ -1,19 +1,20 @@
-from pyrogram import Client
+from pyrogram import Client, filters
 from pytgcalls import PyTgCalls, idle
 from Royalkifeelings.callmusic.config import API_HASH, API_ID, BOT_TOKEN, OWNER_ID, SESSION_NAME
 from Royalkifeelings.plugins import ALL_PLUGINS
 
 bot = Client(
-    "Royalkifeelings",
+    name="Royalkifeelings",
     API_ID,
     API_HASH,
     bot_token=BOT_TOKEN,
 )
 
 Royalboyamit = Client(
+    name="Yt", 
     api_id=API_ID,
     api_hash=API_HASH,
-    session_name=SESSION_NAME,
+    session_string=SESSION_NAME,
 )
 
 user = PyTgCalls(
