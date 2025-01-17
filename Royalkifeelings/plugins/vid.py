@@ -1,3 +1,6 @@
+from typing import Union
+import json
+import yt_dlp
 import re
 import asyncio
 import os
@@ -21,7 +24,7 @@ from pytgcalls.types.input_stream.quality import (
     LowQualityVideo,
     MediumQualityVideo,
 )
-from youtubesearchpython import VideosSearch
+from youtubesearchpython.__future__ import VideosSearch
 from Royalkifeelings.handler.thumbnail import play_thumb, queue_thumb
 
 IMAGE_THUMBNAIL = "https://te.legra.ph/file/ead56db6ded46455bcb2f.jpg"
