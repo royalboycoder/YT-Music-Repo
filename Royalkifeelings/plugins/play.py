@@ -1,9 +1,17 @@
+import os
+import glob
+import random
+import logging
+from typing import Union
+
+import yt_dlp
+
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio
-from youtubesearchpython import VideosSearch
+from youtubesearchpython.__future__ import VideosSearch
 
 from Royalkifeelings.helper.filters import command, other_filters
 from Royalkifeelings.helper.inline import audio_markup, stream_markup
@@ -14,6 +22,18 @@ from Royalkifeelings.callmusic.config import BOT_USERNAME
 from Royalkifeelings import Royalboyamit as user
 from Royalkifeelings import bot as Royalboyamit
 from Royalkifeelings import call_py
+
+
+def cookie_txt_file():
+    folder_path = f"{os.getcwd()}/cookies"
+    filename = f"{os.getcwd()}/cookies/logs.csv"
+    txt_files = glob.glob(os.path.join(folder_path, '*.txt'))
+    if not txt_files:
+        raise FileNotFoundError("No .txt files found in the specified folder.")
+    cookie_txt_file = random.choice(txt_files)
+    with open(filename, 'a') as file:
+        file.write(f'Choosen File : {cookie_txt_file}\n')
+    return f"""cookies/{str(cookie_txt_file).split("/")[-1]}"""
 
 
 def ytsearch(query):
@@ -32,7 +52,7 @@ def ytsearch(query):
 
 
 async def ytdl(format: str, link: str):
-    stdout, stderr = await bash(f'yt-dlp --geo-bypass -g -f "[height<=?2160][width<=?1280]" {link}')
+    stdout, stderr = await bash(f'yt-dlp --geo-bypass --cookies {cookie_txt_file()} -g -f "[height<=?2160][width<=?1280]" {link}')
     if stdout:
         return 1, stdout.split("\n")[0]
     return 0, stderr
