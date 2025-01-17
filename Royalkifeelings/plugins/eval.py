@@ -30,7 +30,7 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@Royalboyamit.on_message(command(["eval", f"eval@{BOT_USERNAME}"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["eval", f"eval@{BOT_USERNAME}"]))
 @sudo_users_only
 async def executor(Royalboyamit, message):
     if len(message.command) < 2:
@@ -105,7 +105,7 @@ async def runtime_func_cq(_, cq):
     await cq.answer(runtime, show_alert=True)
 
 
-@Royalboyamit.on_message(command(["sh", f"sh@{BOT_USERNAME}"]) & ~filters.edited)
+@Royalboyamit.on_message(command(["sh", f"sh@{BOT_USERNAME}"]))
 @sudo_users_only
 async def shellrunner(Royalboyamit, message):
     if len(message.command) < 2:
