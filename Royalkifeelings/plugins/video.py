@@ -77,13 +77,20 @@ async def ytdl(link):
 
 
 @Royalboyamit.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & other_filters)
-async def vplay(c: Royalboyamit, m: ChatMemberUpdated):
+async def vplay(c: Royalboyamit, m: Message):
     await m.delete()
     replied = m.reply_to_message
     chat_id = m.chat.id
     user_id = m.from_user.id
-    if m.sender_chat:
+
+    # Get the chat member object
+    chat_member = await c.get_chat_member(chat_id, user_id)
+
+    # Check if the user can manage voice chats
+    if not chat_member.can_manage_voice_chats:
         return await m.reply_text("ʏᴏᴜ'ʀᴇ ᴀɴ __ᴀɴᴏɴʏᴍᴏᴜs__ ᴀᴅᴍɪɴ !\n\n» ʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ ғʀᴏᴍ ᴀᴅᴍɪɴ ʀɪɢʜᴛs.")
+    
+    # Continue with your logic for vplay...
     try:
         aing = await c.get_me()
     except Exception as e:
